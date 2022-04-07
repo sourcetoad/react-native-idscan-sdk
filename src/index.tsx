@@ -18,13 +18,27 @@ const IdscanSdk = NativeModules.IdscanSdk
     );
 
 type ScanResult = (error: object, scanData: object) => void;
+enum IdScannerTypes {
+  TYPE_ALL,
+  TYPE_MRZ,
+  TYPE_PDF,
+}
+
+// SDK Constants
+const SDKConstants = IdscanSdk.getConstants();
+export const IDScanner_Constants = {
+  TYPE_ALL: SDKConstants.TYPE_ALL,
+  TYPE_MRZ: SDKConstants.TYPE_MRZ,
+  TYPE_PDF: SDKConstants.TYPE_PDF,
+};
 
 export function scan(
+  type: IdScannerTypes,
   cameraKey: string,
   parserKey: string,
   onScanComplete: ScanResult
 ) {
-  IdscanSdk.scan(cameraKey, parserKey, (error: object, data: object) => {
+  IdscanSdk.scan(type, cameraKey, parserKey, (error: object, data: object) => {
     onScanComplete(error, data);
   });
 }

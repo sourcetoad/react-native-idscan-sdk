@@ -1,14 +1,14 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { scan } from 'react-native-idscan-sdk';
+import { scan, IDScanner_Constants } from 'react-native-idscan-sdk';
 
 export default function App() {
   const [result, setResult] = React.useState<object | undefined>();
 
   React.useEffect(() => {
     setTimeout(() => {
-      scan('KEY-1', 'KEY-2', (error, data) => {
+      scan(IDScanner_Constants.TYPE_PDF, 'KEY-1', 'KEY-2', (error, data) => {
         console.log(error, data);
 
         if (!error) {

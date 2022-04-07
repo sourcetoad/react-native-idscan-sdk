@@ -6,13 +6,15 @@
 
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(scan:(NSString *)cameraKey parserKey:(NSString *)parserKey callback:(RCTResponseSenderBlock)callback)
+RCT_EXPORT_METHOD(scan:(NSString *)type cameraKey: (NSString *)cameraKey parserKey:(NSString *)parserKey callback:(RCTResponseSenderBlock)callback)
 {
     self.scannerCallback = callback;
+    self.scannerType = type;
     self.cameraKey = cameraKey;
     self.parserKey = parserKey;
     
     // Store camera and parser keys
+    [[NSUserDefaults standardUserDefaults] setValue: type forKey:@"scannerType"];
     [[NSUserDefaults standardUserDefaults] setValue: cameraKey forKey:@"cameraKey"];
     [[NSUserDefaults standardUserDefaults] setValue: parserKey forKey:@"parserKey"];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -41,6 +43,15 @@ RCT_EXPORT_METHOD(scan:(NSString *)cameraKey parserKey:(NSString *)parserKey cal
     }
 
     self.scannerCallback(@[[NSNull null], formattedData]); // (error, someData) in js
+}
+
+- (NSDictionary *)constantsToExport
+{
+ return @{
+     @"TYPE_ALL": @"all",
+     @"TYPE_MRZ": @"mrz",
+     @"TYPE_PDF": @"pdf"
+ };
 }
 
 @end

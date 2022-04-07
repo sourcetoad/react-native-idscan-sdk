@@ -6,10 +6,16 @@
 
 RCT_EXPORT_MODULE()
 
-// TODO: trigger license scanner
 RCT_EXPORT_METHOD(scan:(NSString *)cameraKey parserKey:(NSString *)parserKey callback:(RCTResponseSenderBlock)callback)
 {
     self.scannerCallback = callback;
+    self.cameraKey = cameraKey;
+    self.parserKey = parserKey;
+    
+    // Store camera and parser keys
+    [[NSUserDefaults standardUserDefaults] setValue: cameraKey forKey:@"cameraKey"];
+    [[NSUserDefaults standardUserDefaults] setValue: parserKey forKey:@"parserKey"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         ScannerViewController* scannerViewController = [[ScannerViewController alloc] init];
@@ -23,7 +29,7 @@ RCT_EXPORT_METHOD(scan:(NSString *)cameraKey parserKey:(NSString *)parserKey cal
 }
 
 - (void)returnScanResult:(ScannerViewController *)controller scanResult:(NSString *)result {
-    NSLog(@"IDScanner: Raw scan was returned from camera scanner: %@", result);
+    NSLog(@"IDScanner: Raw scan result: %@", result);
     NSMutableDictionary *formattedData = [NSMutableDictionary dictionary];
     
     if (result != nil) {

@@ -22,6 +22,13 @@ const result = await scan(
 );
 ```
 
+## iOS Quirks
+
+This plugins requires the following usage descriptions:
+
+- `NSCameraUsageDescription` specifies the reason for your app to access the device's camera.
+- `NSPhotoLibraryUsageDescription` specifies the reason for your app to access the user's photo library.
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.

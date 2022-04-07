@@ -53,5 +53,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+  <key>NSCameraUsageDescription</key>
+	<string>Example app wants to use your camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Example app wants to use your gallery</string>
 </dict>
 </plist>

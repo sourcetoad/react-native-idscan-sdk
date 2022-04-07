@@ -1,18 +1,26 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-idscan-sdk';
+import { scan } from 'react-native-idscan-sdk';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [result, setResult] = React.useState<object | undefined>();
 
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+    setTimeout(() => {
+      scan('KEY-1', 'KEY-2', (error, data) => {
+        console.log(error, data);
+
+        if (!error) {
+          setResult(data);
+        }
+      });
+    }, 5000);
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Result: {JSON.stringify(result)}</Text>
     </View>
   );
 }

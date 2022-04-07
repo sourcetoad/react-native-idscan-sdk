@@ -1,0 +1,6 @@
+framework module IDScanMRZDetector {
+  umbrella header "IDScanMRZDetector.h"
+
+  export *
+  module * { export * }
+}

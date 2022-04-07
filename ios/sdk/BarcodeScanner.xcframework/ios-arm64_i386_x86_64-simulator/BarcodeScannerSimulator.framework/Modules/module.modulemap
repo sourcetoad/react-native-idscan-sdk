@@ -1,6 +1,0 @@
-framework module BarcodeScannerSimulator {
-  umbrella header "BarcodeScannerSimulator.h"
-
-  export *
-  module * { export * }
-}

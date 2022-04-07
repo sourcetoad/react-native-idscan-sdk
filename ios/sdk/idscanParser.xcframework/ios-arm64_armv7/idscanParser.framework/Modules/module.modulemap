@@ -1,6 +1,0 @@
-framework module idscanParser {
-  umbrella header "idscanParser.h"
-
-  export *
-  module * { export * }
-}

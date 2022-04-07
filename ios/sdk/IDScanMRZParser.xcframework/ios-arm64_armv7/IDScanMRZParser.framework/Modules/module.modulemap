@@ -1,0 +1,6 @@
+framework module IDScanMRZParser {
+  umbrella header "IDScanMRZParser.h"
+
+  export *
+  module * { export * }
+}

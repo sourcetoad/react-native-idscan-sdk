@@ -1,0 +1,6 @@
+framework module IDScanPDFParser {
+  umbrella header "IDScanPDFParser.h"
+
+  export *
+  module * { export * }
+}

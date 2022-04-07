@@ -21,10 +21,10 @@ type ScanResult = (error: object, scanData: object) => void;
 
 export function scan(
   cameraKey: string,
-  parserKey: number,
+  parserKey: string,
   onScanComplete: ScanResult
 ) {
-  IdscanSdk.scan(cameraKey, parserKey, (error: any, data: object) => {
+  IdscanSdk.scan(cameraKey, parserKey, (error: object, data: object) => {
     onScanComplete(error, data);
   });
 }

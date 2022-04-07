@@ -312,7 +312,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         IDScanPDFDetector *pdfDetector = [IDScanPDFDetector detectorWithActivationKey: [settings objectForKey:@"cameraKey"]];
         
         if (frameBuffer != nil) {
-            NSString *result = [pdfDetector detectFromSampleBuffer:frameBuffer][@"string"];
+            CIImage *ciImage = [CIImage imageWithCVPixelBuffer:imageBuffer];
+            NSString *result = [pdfDetector detectFromImage:ciImage][@"string"];
             
             free(frameBuffer);
             NSLog(@"Frame decoded");

@@ -1,7 +1,7 @@
 {
   "name": "react-native-idscan-sdk",
   "version": "0.1.0",
-  "description": "React Native ID Scanner wrapper idscan",
+  "description": "SDK for IDScan.net in React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -34,10 +34,11 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "idscan"
   ],
   "repository": "https://github.com/sourcetoad/react-native-idscan-sdk",
-  "author": "ST <ian@support.webartdesign.com.au> (https://github.com/ian-wd)",
+  "author": "Sourcetoad",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sourcetoad/react-native-idscan-sdk/issues"

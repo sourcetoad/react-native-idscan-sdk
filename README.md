@@ -11,11 +11,12 @@ npm install react-native-idscan-sdk
 ## Usage
 
 ```js
-import { scan } from 'react-native-idscan-sdk';
+import { scan, IDScanner_Constants } from 'react-native-idscan-sdk';
 
 // ...
 
 const result = await scan(
+  IDScanner_Constants.TYPE_PDF, // TYPE_ALL, TYPE_MRZ, TYPE_PDF
   'CAMERA_KEY_HERE',
   'PARSER_KEY_HERE',
   (error, scannedData) => console.log(error, scannedData)

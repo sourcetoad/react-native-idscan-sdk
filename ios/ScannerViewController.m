@@ -290,11 +290,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
             bytesPerRow = (int) CVPixelBufferGetBytesPerRowOfPlane(imageBuffer,0);
             width = CVPixelBufferGetWidth(imageBuffer);
             height = CVPixelBufferGetHeight(imageBuffer);
-            int len = width*height;
-            int dstpos=1;
-            for (int i=0;i<len;i++){
-                baseAddress[i]=baseAddress[dstpos];
-                dstpos+=2;
+            int len = width * height;
+            int dstpos = 1;
+            for (int i=0; i < len; i++){
+                baseAddress[i] = baseAddress[dstpos];
+                dstpos += 2;
             }
             
             break;
@@ -305,36 +305,43 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     
     unsigned char *frameBuffer = malloc(width * height);
     memcpy(frameBuffer, baseAddress, width * height);
-    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+    CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
 
         IDScanPDFDetector *pdfDetector = [IDScanPDFDetector detectorWithActivationKey: [settings objectForKey:@"cameraKey"]];
-        NSString *result = [pdfDetector detectFromSampleBuffer:frameBuffer][@"string"];
         
-        free(frameBuffer);
-        NSLog(@"Frame decoded");
-        
-        //CVPixelBufferUnlockBaseAddress(imageBuffer,0);
-        
-        //ignore results less than 4 characters - probably false detection
-        if ( [result length] > 4 )
-        {
-            NSLog(@"Detected PDF417: %@", result);
-            self.state = CAMERA;
+        if (frameBuffer != nil) {
+            NSString *result = [pdfDetector detectFromSampleBuffer:frameBuffer][@"string"];
             
-            if (decodeImage != nil)
+            free(frameBuffer);
+            NSLog(@"Frame decoded");
+            
+            //CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+            
+            //ignore results less than 4 characters - probably false detection
+            if ( [result length] > 4 )
             {
-                CGImageRelease(decodeImage);
-                decodeImage = nil;
+                NSLog(@"Detected PDF417: %@", result);
+                self.state = CAMERA;
+                
+                if (decodeImage != nil)
+                {
+                    CGImageRelease(decodeImage);
+                    decodeImage = nil;
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), ^(void) {
+                    [self.captureSession stopRunning];
+                    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+                    DecoderResult *notificationResult = [DecoderResult createSuccess:result];
+                    [center postNotificationName:DecoderResultNotification object: notificationResult];
+                });
             }
-            
-            dispatch_async(dispatch_get_main_queue(), ^(void) {
-                [self.captureSession stopRunning];
-                NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-                DecoderResult *notificationResult = [DecoderResult createSuccess:result];
-                [center postNotificationName:DecoderResultNotification object: notificationResult];
-            });
+            else
+            {
+                self.state = CAMERA;
+            }
         }
         else
         {

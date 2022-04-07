@@ -5,7 +5,6 @@
 @implementation IdscanSdk
 
 RCT_EXPORT_MODULE()
-
 RCT_EXPORT_METHOD(scan:(NSString *)type cameraKey: (NSString *)cameraKey parserKey:(NSString *)parserKey callback:(RCTResponseSenderBlock)callback)
 {
     self.scannerCallback = callback;
@@ -25,7 +24,6 @@ RCT_EXPORT_METHOD(scan:(NSString *)type cameraKey: (NSString *)cameraKey parserK
         NSLog(@"IDScanner: Starting camera scanner...");
         
         UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
-        
         [rootViewController presentViewController:scannerViewController animated:YES completion:nil];
     });
 }
@@ -42,7 +40,7 @@ RCT_EXPORT_METHOD(scan:(NSString *)type cameraKey: (NSString *)cameraKey parserK
         [formattedData setObject: [NSNull null] forKey: @"data"];
     }
 
-    self.scannerCallback(@[[NSNull null], formattedData]); // (error, someData) in js
+    self.scannerCallback(@[[NSNull null], formattedData]);
 }
 
 - (NSDictionary *)constantsToExport

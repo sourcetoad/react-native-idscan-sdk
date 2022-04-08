@@ -1,8 +1,18 @@
 #import <React/RCTRootView.h>
 #import "IdscanSdk.h"
 #import "ScannerViewController.h"
+#import <AVFoundation/AVFoundation.h>
+
+// parsers
+@import IDScanPDFParser;
+@import IDScanMRZParser;
 
 @implementation IdscanSdk
+
+// Constants
+const NSString* typeAll = @"all";
+const NSString* typeMRZ = @"mrz";
+const NSString* typePDF = @"pdf";
 
 RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(scan:(NSString *)type cameraKey: (NSString *)cameraKey parserKey:(NSString *)parserKey callback:(RCTResponseSenderBlock)callback)
@@ -33,8 +43,19 @@ RCT_EXPORT_METHOD(scan:(NSString *)type cameraKey: (NSString *)cameraKey parserK
     NSMutableDictionary *formattedData = [NSMutableDictionary dictionary];
     
     if (result != nil) {
+        // activate parser
+        IDScanPDFParser *pdfParser = [IDScanPDFParser parserWithActivationKey:self.parserKey];
+        IDScanMRZParser *mrzParser = [[IDScanMRZParser alloc] init];
+        
+        NSDictionary<NSString *, NSString *> *parsedData;
+        if ([self.scannerType isEqualToString:@"pdf"]) {
+            parsedData = [pdfParser parse:result];
+        } else if ([self.scannerType isEqualToString:@"mrz"]) {
+            parsedData = [mrzParser parse:result];
+        }
+        
         [formattedData setObject: @"true" forKey: @"success"];
-        [formattedData setObject: result forKey: @"data"];
+        [formattedData setObject: parsedData forKey: @"data"];
     } else {
         [formattedData setObject: @"false" forKey: @"success"];
         [formattedData setObject: [NSNull null] forKey: @"data"];
@@ -46,9 +67,9 @@ RCT_EXPORT_METHOD(scan:(NSString *)type cameraKey: (NSString *)cameraKey parserK
 - (NSDictionary *)constantsToExport
 {
  return @{
-     @"TYPE_ALL": @"all",
-     @"TYPE_MRZ": @"mrz",
-     @"TYPE_PDF": @"pdf"
+     @"TYPE_ALL": typeAll,
+     @"TYPE_MRZ": typeMRZ,
+     @"TYPE_PDF": typePDF
  };
 }
 

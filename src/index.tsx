@@ -1,4 +1,5 @@
 import { NativeModules, Platform } from 'react-native';
+import type { DLData, ScanResult, IdScannerTypes } from './types';
 
 const LINKING_ERROR =
   `The package 'react-native-idscan-sdk' doesn't seem to be linked. Make sure: \n\n` +
@@ -17,13 +18,6 @@ const IdscanSdk = NativeModules.IdscanSdk
       }
     );
 
-type ScanResult = (error: object, scanData: object) => void;
-enum IdScannerTypes {
-  TYPE_ALL,
-  TYPE_MRZ,
-  TYPE_PDF,
-}
-
 // SDK Constants
 const SDKConstants = IdscanSdk.getConstants();
 export const IDScanner_Constants = {
@@ -38,7 +32,7 @@ export function scan(
   parserKey: string,
   onScanComplete: ScanResult
 ) {
-  IdscanSdk.scan(type, cameraKey, parserKey, (error: object, data: object) => {
+  IdscanSdk.scan(type, cameraKey, parserKey, (error: object, data: DLData) => {
     onScanComplete(error, data);
   });
 }

@@ -11,16 +11,37 @@ npm install react-native-idscan-sdk
 ## Usage
 
 ```js
+import { TouchableOpacity, Text } from 'react-native'
 import { scan, IDScanner_Constants } from 'react-native-idscan-sdk';
 
 // ...
 
-const result = await scan(
-  IDScanner_Constants.TYPE_PDF, // TYPE_ALL, TYPE_MRZ, TYPE_PDF
-  'CAMERA_KEY_HERE',
-  'PARSER_KEY_HERE',
-  (error, scannedData) => console.log(error, scannedData)
-);
+const onScanID = () => {
+  scan(
+    IDScanner_Constants.TYPE_PDF, // TYPE_ALL, TYPE_MRZ, TYPE_PDF
+    {
+      // iOS
+      iosDetectorPDFLicenseKey: 'iOS IdScanner PDF License Key here',
+      iosDetectorMRZLicenseKey: 'iOS IdScanner MRZ License Key here',
+      iosParserPDFLicenseKey: 'iOS IdParser PDF License Key here',
+
+      // Android
+      androidDetectorPDFLicenseKey: 'android IdScanner PDF License Key here',
+      androidDetectorMRZLicenseKey: 'android IdScanner MRZ License Key here',
+      androidParserPDFLicenseKey: 'android IdParser PDF License Key here',
+    }
+    (error, scannedData) => console.log(error, scannedData)
+  );
+}
+
+// ...
+
+<TouchableOpacity
+  onPress={onScanID}
+>
+  <Text>Scan My ID</Text>
+</TouchableOpacity>
+
 ```
 
 ## iOS Quirks

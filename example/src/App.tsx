@@ -1,41 +1,52 @@
-import * as React from 'react';
+import React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { scan, IDScanner_Constants } from 'react-native-idscan-sdk';
 
 export default function App() {
   const [result, setResult] = React.useState<object | undefined>();
 
-  React.useEffect(() => {
-    setTimeout(() => {
-      scan(
-        IDScanner_Constants.TYPE_PDF,
-        {
-          // iOS
-          iosDetectorPDFLicenseKey: 'iOS IdScanner PDF License Key here',
-          iosDetectorMRZLicenseKey: 'iOS IdScanner MRZ License Key here',
-          iosParserPDFLicenseKey: 'iOS IdParser PDF License Key here',
+  // methods
+  const triggerScanner = () => {
+    scan(
+      IDScanner_Constants.TYPE_PDF,
+      {
+        // iOS
+        iosDetectorPDFLicenseKey: 'iOS IdScanner PDF License Key here',
+        iosDetectorMRZLicenseKey: 'iOS IdScanner MRZ License Key here',
+        iosParserPDFLicenseKey: 'iOS IdParser PDF License Key here',
 
-          // Android
-          androidDetectorPDFLicenseKey:
-            'android IdScanner PDF License Key here',
-          androidDetectorMRZLicenseKey:
-            'android IdScanner MRZ License Key here',
-          androidParserPDFLicenseKey: 'android IdParser PDF License Key here',
-        },
-        (error, data) => {
-          console.log(error, data);
+        // Android
+        androidDetectorPDFLicenseKey: 'android IdScanner PDF License Key here',
+        androidDetectorMRZLicenseKey: 'android IdScanner MRZ License Key here',
+        androidParserPDFLicenseKey: 'android IdParser PDF License Key here',
+      },
+      (error, data) => {
+        console.log(error, data);
 
-          if (!error) {
-            setResult(data);
-          }
+        if (!error) {
+          setResult(data);
         }
-      );
-    }, 5000);
-  }, []);
+      }
+    );
+  };
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+        onPress={triggerScanner}
+        style={{
+          width: 200,
+          height: 40,
+          backgroundColor: '#a2f6a5',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginBottom: 10,
+          borderRadius: 5,
+        }}
+      >
+        <Text>Scan ID</Text>
+      </TouchableOpacity>
       <Text>Result: {JSON.stringify(result)}</Text>
     </View>
   );

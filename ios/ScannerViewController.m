@@ -257,67 +257,34 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     
-    // Lock the image buffer
-    CVPixelBufferLockBaseAddress(imageBuffer, 0);
-
-    // Get information about the image
-    baseAddress = (uint8_t *)CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);
-    int pixelFormat = CVPixelBufferGetPixelFormatType(imageBuffer);
-    switch (pixelFormat) {
-        case kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange:
-            bytesPerRow = CVPixelBufferGetBytesPerRowOfPlane(imageBuffer, 0);
-            width = bytesPerRow;
-            height = CVPixelBufferGetHeightOfPlane(imageBuffer, 0);
-            break;
-        case kCVPixelFormatType_422YpCbCr8:
-            bytesPerRow = (int) CVPixelBufferGetBytesPerRowOfPlane(imageBuffer, 0);
-            width = CVPixelBufferGetWidth(imageBuffer);
-            height = CVPixelBufferGetHeight(imageBuffer);
-            int len = width * height;
-            int dstpos = 1;
-            for (int i = 0; i < len; i++) {
-                baseAddress[i] = baseAddress[dstpos];
-                dstpos += 2;
-            }
-            break;
-        default:
-            break;
-    }
+    // get image
+    CIImage *ciImage = [CIImage imageWithCVPixelBuffer:imageBuffer];
     
-    unsigned char *frameBuffer = malloc(width * height);
-    memcpy(frameBuffer, baseAddress, width * height);
-    CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+        
+        // activate license
         IDScanPDFDetector *pdfDetector = [IDScanPDFDetector detectorWithActivationKey: [settings objectForKey:@"cameraKey"]];
         
-        if (frameBuffer != nil) {
-            CIImage *ciImage = [CIImage imageWithCVPixelBuffer:imageBuffer];
-            NSString *result = [pdfDetector detectFromImage:ciImage][@"string"];
-
-            free(frameBuffer);
-            NSLog(@"Frame decoded");
+        // detect id
+        NSString *result = [pdfDetector detectFromImage:ciImage][@"string"];
+        
+        // Ignore results less than 4 characters - probably false detection
+        if ([result length] > 4) {
+            NSLog(@"Detected PDF417: %@", result);
+            self.state = CAMERA;
             
-            // Ignore results less than 4 characters - probably false detection
-            if ([result length] > 4) {
-                NSLog(@"Detected PDF417: %@", result);
-                self.state = CAMERA;
-                
-                if (decodeImage != nil) {
-                    CGImageRelease(decodeImage);
-                    decodeImage = nil;
-                }
+            if (decodeImage != nil) {
+                CGImageRelease(decodeImage);
+                decodeImage = nil;
+            }
 
-                dispatch_async(dispatch_get_main_queue(), ^(void) {
-                    [self.captureSession stopRunning];
-                    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-                    DecoderResult *notificationResult = [DecoderResult createSuccess:result];
-                    [center postNotificationName:DecoderResultNotification object: notificationResult];
-                });
-            }
-            else {
-                self.state = CAMERA;
-            }
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [self.captureSession stopRunning];
+                NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+                DecoderResult *notificationResult = [DecoderResult createSuccess:result];
+                [center postNotificationName:DecoderResultNotification object: notificationResult];
+            });
         }
         else {
             self.state = CAMERA;

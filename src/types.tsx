@@ -47,7 +47,7 @@ export type ScanResult = (error: object, scanData: DLData) => void;
  * Scanner Types
  */
 export enum IdScannerTypes {
-  TYPE_ALL,
+  TYPE_COMBINED,
   TYPE_MRZ,
   TYPE_PDF,
 }

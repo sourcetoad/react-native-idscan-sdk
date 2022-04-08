@@ -10,7 +10,7 @@
 @implementation IdscanSdk
 
 // Constants
-const NSString* typeAll = @"all";
+const NSString* typeCombined = @"combined";
 const NSString* typeMRZ = @"mrz";
 const NSString* typePDF = @"pdf";
 
@@ -69,7 +69,7 @@ RCT_EXPORT_METHOD(scan:(NSString *)type apiKeys: (NSDictionary *)apiKeys callbac
 - (NSDictionary *)constantsToExport
 {
  return @{
-     @"TYPE_ALL": typeAll,
+     @"TYPE_COMBINED": typeCombined,
      @"TYPE_MRZ": typeMRZ,
      @"TYPE_PDF": typePDF
  };

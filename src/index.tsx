@@ -20,12 +20,30 @@ const IdscanSdk = NativeModules.IdscanSdk
 
 // SDK Constants
 const SDKConstants = IdscanSdk.getConstants();
+
 export const IDScanner_Constants = {
-  TYPE_ALL: SDKConstants.TYPE_ALL,
+  /**
+   * Combined PDF and MRZ Scanner
+   */
+  TYPE_COMBINED: SDKConstants.TYPE_COMBINED,
+
+  /**
+   * Scan Passports
+   */
   TYPE_MRZ: SDKConstants.TYPE_MRZ,
+
+  /**
+   * Scan Drivers Licenses
+   */
   TYPE_PDF: SDKConstants.TYPE_PDF,
 };
 
+/**
+ * Scan a Drivers License or Passport
+ * @param type Supported scanner/parser types
+ * @param apiKeys Object containing android and iOS API keys
+ * @param onScanComplete Handle scan complete function
+ */
 export function scan(
   type: IdScannerTypes,
   apiKeys: APIKeys,

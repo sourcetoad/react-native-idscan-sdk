@@ -15,17 +15,19 @@ const NSString* typeMRZ = @"mrz";
 const NSString* typePDF = @"pdf";
 
 RCT_EXPORT_MODULE()
-RCT_EXPORT_METHOD(scan:(NSString *)type cameraKey: (NSString *)cameraKey parserKey:(NSString *)parserKey callback:(RCTResponseSenderBlock)callback)
+RCT_EXPORT_METHOD(scan:(NSString *)type apiKeys: (NSDictionary *)apiKeys callback:(RCTResponseSenderBlock)callback)
 {
     self.scannerCallback = callback;
     self.scannerType = type;
-    self.cameraKey = cameraKey;
-    self.parserKey = parserKey;
+    self.scannerPDFKey = apiKeys[@"iosDetectorPDFLicenseKey"];
+    self.scannerMRZKey = apiKeys[@"iosDetectorMRZLicenseKey"];
+    self.parserKey = apiKeys[@"iosParserPDFLicenseKey"];
     
     // Store camera and parser keys
     [[NSUserDefaults standardUserDefaults] setValue: type forKey:@"scannerType"];
-    [[NSUserDefaults standardUserDefaults] setValue: cameraKey forKey:@"cameraKey"];
-    [[NSUserDefaults standardUserDefaults] setValue: parserKey forKey:@"parserKey"];
+    [[NSUserDefaults standardUserDefaults] setValue: self.scannerPDFKey forKey:@"scannerPDFKey"];
+    [[NSUserDefaults standardUserDefaults] setValue: self.scannerMRZKey forKey:@"scannerMRZKey"];
+    [[NSUserDefaults standardUserDefaults] setValue: self.parserKey forKey:@"parserKey"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     dispatch_async(dispatch_get_main_queue(), ^(void) {

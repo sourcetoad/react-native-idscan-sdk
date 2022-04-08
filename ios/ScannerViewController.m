@@ -3,6 +3,7 @@
 
 // IDScan Libraries
 @import IDScanPDFDetector;
+@import IDScanMRZDetector;
 
 @implementation ScannerViewController {
     AVCaptureSession *_captureSession;
@@ -264,14 +265,29 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
         
         // activate license
-        IDScanPDFDetector *pdfDetector = [IDScanPDFDetector detectorWithActivationKey: [settings objectForKey:@"cameraKey"]];
+        NSString *scannerType = [settings objectForKey:@"scannerType"];
         
-        // detect id
-        NSString *result = [pdfDetector detectFromImage:ciImage][@"string"];
+        IDScanPDFDetector *pdfDetector = [IDScanPDFDetector detectorWithActivationKey: [settings objectForKey:@"scannerPDFKey"]];
+        IDScanMRZDetector *mrzDetector = [IDScanMRZDetector detectorWithActivationKey: [settings objectForKey:@"scannerMRZKey"]];
+        
+        NSString *result = @"";
+        
+        // detect based on scanner Type
+        if ([scannerType isEqualToString:@"pdf"]) {
+            result = [pdfDetector detectFromImage:ciImage][@"string"];
+        } else if ([scannerType isEqualToString:@"mrz"]) {
+            result = [mrzDetector detectFromImage:ciImage][@"string"];
+        } else {
+            // combined scanner
+            result = [pdfDetector detectFromImage:ciImage][@"string"];
+            
+            if ([result length] < 4) {
+                result = [mrzDetector detectFromImage:ciImage][@"string"];
+            }
+        }
         
         // Ignore results less than 4 characters - probably false detection
         if ([result length] > 4) {
-            NSLog(@"Detected PDF417: %@", result);
             self.state = CAMERA;
             
             if (decodeImage != nil) {

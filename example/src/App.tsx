@@ -8,13 +8,29 @@ export default function App() {
 
   React.useEffect(() => {
     setTimeout(() => {
-      scan(IDScanner_Constants.TYPE_PDF, 'KEY-1', 'KEY-2', (error, data) => {
-        console.log(error, data);
+      scan(
+        IDScanner_Constants.TYPE_PDF,
+        {
+          // iOS
+          iosDetectorPDFLicenseKey: 'iOS IdScanner PDF License Key here',
+          iosDetectorMRZLicenseKey: 'iOS IdScanner MRZ License Key here',
+          iosParserPDFLicenseKey: 'iOS IdParser PDF License Key here',
 
-        if (!error) {
-          setResult(data);
+          // Android
+          androidDetectorPDFLicenseKey:
+            'android IdScanner PDF License Key here',
+          androidDetectorMRZLicenseKey:
+            'android IdScanner MRZ License Key here',
+          androidParserPDFLicenseKey: 'android IdParser PDF License Key here',
+        },
+        (error, data) => {
+          console.log(error, data);
+
+          if (!error) {
+            setResult(data);
+          }
         }
-      });
+      );
     }, 5000);
   }, []);
 

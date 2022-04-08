@@ -51,3 +51,18 @@ export enum IdScannerTypes {
   TYPE_MRZ,
   TYPE_PDF,
 }
+
+/**
+ * API Keys Types
+ */
+export type APIKeys = {
+  // iOS
+  iosDetectorPDFLicenseKey: string;
+  iosDetectorMRZLicenseKey: string;
+  iosParserPDFLicenseKey: string;
+
+  // Android
+  androidDetectorPDFLicenseKey: string;
+  androidDetectorMRZLicenseKey: string;
+  androidParserPDFLicenseKey: string;
+};

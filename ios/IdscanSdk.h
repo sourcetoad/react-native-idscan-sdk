@@ -5,7 +5,8 @@
 
 @property (nonatomic, copy) RCTResponseSenderBlock scannerCallback;
 @property (nonatomic, copy) NSString* scannerType;
-@property (nonatomic, copy) NSString* cameraKey;
+@property (nonatomic, copy) NSString* scannerPDFKey;
+@property (nonatomic, copy) NSString* scannerMRZKey;
 @property (nonatomic, copy) NSString* parserKey;
 
 @end

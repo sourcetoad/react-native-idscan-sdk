@@ -18,7 +18,7 @@ import { scan, IDScanner_Constants } from 'react-native-idscan-sdk';
 
 const onScanID = () => {
   scan(
-    IDScanner_Constants.TYPE_PDF, // TYPE_ALL, TYPE_MRZ, TYPE_PDF
+    IDScanner_Constants.TYPE_PDF, // TYPE_COMBINED, TYPE_MRZ, TYPE_PDF
     {
       // iOS
       iosDetectorPDFLicenseKey: 'iOS IdScanner PDF License Key here',
@@ -65,6 +65,12 @@ allprojects {
         ...
     }
 }
+```
+
+- You must ask for camera permission. Insert this to your project's `AndroidManifest.xml`
+
+```
+<uses-permission android:name="android.permission.CAMERA" />
 ```
 
 ## Contributing

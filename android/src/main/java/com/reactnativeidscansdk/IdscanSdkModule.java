@@ -53,6 +53,9 @@ public class IdscanSdkModule extends ReactContextBaseJavaModule implements Permi
         super.onActivityResult(activity, requestCode, resultCode, data);
 
         if (requestCode == SCAN_ACTIVITY_CODE) {
+          String errorMessage = "";
+          WritableMap scanResult = Arguments.createMap();
+
           switch (resultCode) {
             case MultiScanActivity.RESULT_OK:
               if (data != null) {
@@ -73,27 +76,42 @@ public class IdscanSdkModule extends ReactContextBaseJavaModule implements Permi
               break;
 
             case MultiScanActivity.ERROR_RECOGNITION:
-              Log.d(NAME, data.getStringExtra(MultiScanActivity.ERROR_DESCRIPTION));
+              errorMessage = data.getStringExtra(MultiScanActivity.ERROR_DESCRIPTION);
               break;
 
             case MultiScanActivity.ERROR_INVALID_CAMERA_NUMBER:
-              Log.d(NAME, "Invalid camera number.");
+              errorMessage = "Invalid camera number.";
               break;
 
             case MultiScanActivity.ERROR_CAMERA_NOT_AVAILABLE:
-              Log.d(NAME, "Camera not available.");
+              errorMessage = "Camera not available.";
               break;
 
             case MultiScanActivity.ERROR_INVALID_CAMERA_ACCESS:
-              Log.d(NAME, "Invalid camera access.");
+              errorMessage = "Invalid camera access.";
               break;
 
             case MultiScanActivity.RESULT_CANCELED:
+              Log.d(NAME, "Cancelled IdScanner");
+
+              ReadableMap emptyData = (ReadableMap) Arguments.createMap();
+              scanResult.putBoolean("success", false);
+              scanResult.putMap("data", emptyData);
+
               break;
 
             default:
-              Log.d(NAME, "Undefined error.");
+              errorMessage = "Undefined error.";
               break;
+          }
+
+          Log.d(NAME, errorMessage);
+
+          if (errorMessage.length() > 1) {
+            scanResult.putString("success", "false");
+            callback.invoke(errorMessage, scanResult);
+          } else {
+            callback.invoke(null, scanResult);
           }
         }
       }

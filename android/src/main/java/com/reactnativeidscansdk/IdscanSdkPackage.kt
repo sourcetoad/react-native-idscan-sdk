@@ -1,28 +1,19 @@
-package com.reactnativeidscansdk;
+package com.reactnativeidscansdk
 
-import androidx.annotation.NonNull;
+import com.facebook.react.ReactPackage
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.NativeModule
+import com.facebook.react.uimanager.ViewManager
+import java.util.ArrayList
 
-import com.facebook.react.ReactPackage;
-import com.facebook.react.bridge.NativeModule;
-import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.uimanager.ViewManager;
+class IdscanSdkPackage : ReactPackage {
+  override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
+    val modules: MutableList<NativeModule> = ArrayList()
+    modules.add(IdscanSdkModule(reactContext))
+    return modules
+  }
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-public class IdscanSdkPackage implements ReactPackage {
-    @NonNull
-    @Override
-    public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {
-        List<NativeModule> modules = new ArrayList<>();
-        modules.add(new IdscanSdkModule(reactContext));
-        return modules;
-    }
-
-    @NonNull
-    @Override
-    public List<ViewManager> createViewManagers(@NonNull ReactApplicationContext reactContext) {
-        return Collections.emptyList();
-    }
+  override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
+    return emptyList()
+  }
 }

@@ -21,7 +21,7 @@ def safeExtGet(prop, fallback) {
 android {
     compileSdkVersion safeExtGet('IdscanSdk_compileSdkVersion', 29)
     defaultConfig {
-        minSdkVersion safeExtGet('IdscanSdk_minSdkVersion', 16)
+        minSdkVersion safeExtGet('IdscanSdk_minSdkVersion', 19)
         targetSdkVersion safeExtGet('IdscanSdk_targetSdkVersion', 29)
         versionCode 1
         versionName "1.0"
@@ -48,6 +48,7 @@ repositories {
         // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
         url("$rootDir/../node_modules/react-native/android")
     }
+
     google()
     mavenCentral()
     jcenter()
@@ -56,4 +57,10 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+
+    // IDScan dependencies
+    implementation 'net.idscan.components.android:dlparser-standard:1.28.4'
+    implementation 'net.idscan.components.android:multiscan:1.5.1'
+    implementation 'net.idscan.components.android:multiscan-mrz:1.5.1'
+    implementation 'net.idscan.components.android:multiscan-pdf417:1.5.1'
 }

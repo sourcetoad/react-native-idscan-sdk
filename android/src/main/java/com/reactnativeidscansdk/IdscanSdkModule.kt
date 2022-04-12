@@ -1,7 +1,6 @@
 package com.reactnativeidscansdk
 
 import android.Manifest
-import android.R.attr
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -20,7 +19,6 @@ import net.idscan.components.android.multiscan.components.mrz.MRZData
 import net.idscan.components.android.multiscan.components.pdf417.PDF417Component
 import net.idscan.components.android.multiscan.components.pdf417.PDF417Data
 
-
 @ReactModule(name = IdscanSdkModule.NAME)
 class IdscanSdkModule(reactContext: ReactApplicationContext) :
   ReactContextBaseJavaModule(reactContext), PermissionListener {
@@ -29,6 +27,7 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
   private var scannerPDFKey: String? = null
   private var scannerMRZKey: String? = null
   private var parserKey: String? = null
+
   private val mActivityEventListener: ActivityEventListener =
     object : BaseActivityEventListener() {
       override fun onActivityResult(
@@ -41,10 +40,12 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
         if (requestCode == SCAN_ACTIVITY_CODE) {
           var errorMessage = ""
           val scanResult = Arguments.createMap()
+
           when (resultCode) {
             MultiScanActivity.RESULT_OK -> if (data != null) {
               val document =
                 data.getSerializableExtra(MultiScanActivity.DOCUMENT_DATA) as DocumentData?
+
               if (document != null) {
                 val mrzData = MRZComponent.extractDataFromDocument(document)
                 val pdf417Data = PDF417Component.extractDataFromDocument(document)
@@ -62,20 +63,15 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
                       errorMessage = e.message!!
                     }
                   }
-                  else -> {
-                    scanResult.putBoolean("success", false)
-                  }
+                  else -> scanResult.putBoolean("success", false)
                 }
               }
             }
             MultiScanActivity.ERROR_RECOGNITION -> errorMessage =
               data?.getStringExtra(MultiScanActivity.ERROR_DESCRIPTION).toString()
-            MultiScanActivity.ERROR_INVALID_CAMERA_NUMBER -> errorMessage =
-              "Invalid camera number."
-            MultiScanActivity.ERROR_CAMERA_NOT_AVAILABLE -> errorMessage =
-              "Camera not available."
-            MultiScanActivity.ERROR_INVALID_CAMERA_ACCESS -> errorMessage =
-              "Invalid camera access."
+            MultiScanActivity.ERROR_INVALID_CAMERA_NUMBER -> errorMessage = "Invalid camera number."
+            MultiScanActivity.ERROR_CAMERA_NOT_AVAILABLE -> errorMessage = "Camera not available."
+            MultiScanActivity.ERROR_INVALID_CAMERA_ACCESS -> errorMessage = "Invalid camera access."
             MultiScanActivity.RESULT_CANCELED -> {
               Log.d(NAME, "Cancelled IdScanner")
               val emptyData = Arguments.createMap() as ReadableMap
@@ -187,16 +183,16 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
 
   override fun getConstants(): Map<String, Any> {
     val constants: MutableMap<String, Any> = HashMap()
-    constants["TYPE_COMBINED"] = typeCombined
-    constants["TYPE_MRZ"] = typeMRZ
-    constants["TYPE_PDF"] = typePDF
+    constants["TYPE_COMBINED"] = TYPE_COMBINED
+    constants["TYPE_MRZ"] = TYPE_MRZ
+    constants["TYPE_PDF"] = TYPE_PDF
     return constants
   }
 
   companion object {
-    const val typeCombined = "combined"
-    const val typeMRZ = "mrz"
-    const val typePDF = "pdf"
+    private const val TYPE_COMBINED = "combined"
+    private const val TYPE_MRZ = "mrz"
+    private const val TYPE_PDF = "pdf"
 
     private const val SCAN_ACTIVITY_CODE = 0x001
     private const val REQUEST_CAMERA_PERMISSIONS_DEFAULT = 0x100
@@ -204,9 +200,6 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
     private const val KEY_PDF_KEY = "androidDetectorPDFLicenseKey"
     private const val KEY_MRZ_KEY = "androidDetectorMRZLicenseKey"
     private const val KEY_PARSER_KEY = "androidParserPDFLicenseKey"
-
-    private val permissions =
-      arrayOf(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE)
 
     const val NAME = "IdscanSdk"
   }

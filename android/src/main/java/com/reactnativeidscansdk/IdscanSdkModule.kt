@@ -1,20 +1,23 @@
 package com.reactnativeidscansdk
 
 import android.Manifest
-import com.facebook.react.module.annotations.ReactModule
-import com.facebook.react.modules.core.PermissionListener
+import android.R.attr
 import android.app.Activity
 import android.content.Intent
-import net.idscan.components.android.multiscan.MultiScanActivity
-import net.idscan.components.android.multiscan.common.DocumentData
-import net.idscan.components.android.multiscan.components.mrz.MRZComponent
-import net.idscan.components.android.multiscan.components.pdf417.PDF417Component
 import android.content.pm.PackageManager
 import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.facebook.react.bridge.*
-import java.util.HashMap
+import com.facebook.react.module.annotations.ReactModule
+import com.facebook.react.modules.core.PermissionListener
+import net.idscan.android.dlparser.DLParser
+import net.idscan.android.dlparser.DLParser.DLParserException
+import net.idscan.components.android.multiscan.MultiScanActivity
+import net.idscan.components.android.multiscan.common.DocumentData
+import net.idscan.components.android.multiscan.components.mrz.MRZComponent
+import net.idscan.components.android.multiscan.components.pdf417.PDF417Component
+
 
 @ReactModule(name = IdscanSdkModule.NAME)
 class IdscanSdkModule(reactContext: ReactApplicationContext) :
@@ -47,7 +50,21 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
                   Log.d(NAME, "TODO: parse MRZ Data")
                 }
                 if (pdf417Data != null) {
-                  Log.d(NAME, "TODO: parse PDF Data")
+                  val parser = DLParser()
+                  try {
+                    parser.setup(reactApplicationContext, parserKey)
+                    val res = parser.parse(pdf417Data.barcodeData)
+                    val mappedResult = WritableNativeMap()
+
+                    for (field in res.javaClass.declaredFields) {
+                      mappedResult.putString(field.name, field.get(res)?.toString())
+                    }
+
+                    scanResult.putBoolean("success", true)
+                    scanResult.putMap("data", mappedResult)
+                  } catch (e: DLParserException) {
+                    errorMessage = e.message!!
+                  }
                 }
               }
             }

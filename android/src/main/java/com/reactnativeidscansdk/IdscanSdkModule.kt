@@ -50,21 +50,21 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
                 val pdf417Data = PDF417Component.extractDataFromDocument(document)
 
                 when {
-                    mrzData != null -> {
+                  mrzData != null -> {
+                    scanResult.putBoolean("success", true)
+                    scanResult.putMap("data", parseMrzData(mrzData))
+                  }
+                  pdf417Data != null -> {
+                    try {
                       scanResult.putBoolean("success", true)
-                      scanResult.putMap("data", parseMrzData(mrzData))
+                      scanResult.putMap("data", parsePdfData(pdf417Data))
+                    } catch (e: DLParserException) {
+                      errorMessage = e.message!!
                     }
-                    pdf417Data != null -> {
-                      try {
-                            scanResult.putBoolean("success", true)
-                            scanResult.putMap("data", parsePdfData(pdf417Data))
-                      } catch (e: DLParserException) {
-                            errorMessage = e.message!!
-                      }
-                    }
-                    else -> {
-                      scanResult.putBoolean("success", false)
-                    }
+                  }
+                  else -> {
+                    scanResult.putBoolean("success", false)
+                  }
                 }
               }
             }

@@ -33,7 +33,7 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
         activity: Activity,
         requestCode: Int,
         resultCode: Int,
-        data: Intent
+        data: Intent?
       ) {
         super.onActivityResult(activity, requestCode, resultCode, data)
         if (requestCode == SCAN_ACTIVITY_CODE) {
@@ -42,10 +42,11 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
           when (resultCode) {
             MultiScanActivity.RESULT_OK -> if (data != null) {
               val document =
-                data.getSerializableExtra(MultiScanActivity.DOCUMENT_DATA) as DocumentData
+                data.getSerializableExtra(MultiScanActivity.DOCUMENT_DATA) as DocumentData?
               if (document != null) {
                 val mrzData = MRZComponent.extractDataFromDocument(document)
                 val pdf417Data = PDF417Component.extractDataFromDocument(document)
+
                 if (mrzData != null) {
                   val mappedResult = WritableNativeMap()
                   for (field in mrzData.fields) {
@@ -54,6 +55,7 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
                   scanResult.putBoolean("success", true)
                   scanResult.putMap("data", mappedResult)
                 }
+
                 if (pdf417Data != null) {
                   val parser = DLParser()
                   try {
@@ -74,7 +76,7 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
               }
             }
             MultiScanActivity.ERROR_RECOGNITION -> errorMessage =
-              data.getStringExtra(MultiScanActivity.ERROR_DESCRIPTION).toString()
+              data?.getStringExtra(MultiScanActivity.ERROR_DESCRIPTION).toString()
             MultiScanActivity.ERROR_INVALID_CAMERA_NUMBER -> errorMessage =
               "Invalid camera number."
             MultiScanActivity.ERROR_CAMERA_NOT_AVAILABLE -> errorMessage =

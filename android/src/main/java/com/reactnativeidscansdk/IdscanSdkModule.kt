@@ -47,7 +47,12 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
                 val mrzData = MRZComponent.extractDataFromDocument(document)
                 val pdf417Data = PDF417Component.extractDataFromDocument(document)
                 if (mrzData != null) {
-                  Log.d(NAME, "TODO: parse MRZ Data")
+                  val mappedResult = WritableNativeMap()
+                  for (field in mrzData.fields) {
+                    mappedResult.putString(field.key.name, field.value.value)
+                  }
+                  scanResult.putBoolean("success", true)
+                  scanResult.putMap("data", mappedResult)
                 }
                 if (pdf417Data != null) {
                   val parser = DLParser()

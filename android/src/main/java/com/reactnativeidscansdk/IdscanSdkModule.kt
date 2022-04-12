@@ -16,7 +16,9 @@ import net.idscan.android.dlparser.DLParser.DLParserException
 import net.idscan.components.android.multiscan.MultiScanActivity
 import net.idscan.components.android.multiscan.common.DocumentData
 import net.idscan.components.android.multiscan.components.mrz.MRZComponent
+import net.idscan.components.android.multiscan.components.mrz.MRZData
 import net.idscan.components.android.multiscan.components.pdf417.PDF417Component
+import net.idscan.components.android.multiscan.components.pdf417.PDF417Data
 
 
 @ReactModule(name = IdscanSdkModule.NAME)
@@ -47,31 +49,22 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
                 val mrzData = MRZComponent.extractDataFromDocument(document)
                 val pdf417Data = PDF417Component.extractDataFromDocument(document)
 
-                if (mrzData != null) {
-                  val mappedResult = WritableNativeMap()
-                  for (field in mrzData.fields) {
-                    mappedResult.putString(field.key.name, field.value.value)
-                  }
-                  scanResult.putBoolean("success", true)
-                  scanResult.putMap("data", mappedResult)
-                }
-
-                if (pdf417Data != null) {
-                  val parser = DLParser()
-                  try {
-                    parser.setup(reactApplicationContext, parserKey)
-                    val res = parser.parse(pdf417Data.barcodeData)
-                    val mappedResult = WritableNativeMap()
-
-                    for (field in res.javaClass.declaredFields) {
-                      mappedResult.putString(field.name, field.get(res)?.toString())
+                when {
+                    mrzData != null -> {
+                      scanResult.putBoolean("success", true)
+                      scanResult.putMap("data", parseMrzData(mrzData))
                     }
-
-                    scanResult.putBoolean("success", true)
-                    scanResult.putMap("data", mappedResult)
-                  } catch (e: DLParserException) {
-                    errorMessage = e.message!!
-                  }
+                    pdf417Data != null -> {
+                      try {
+                            scanResult.putBoolean("success", true)
+                            scanResult.putMap("data", parsePdfData(pdf417Data))
+                      } catch (e: DLParserException) {
+                            errorMessage = e.message!!
+                      }
+                    }
+                    else -> {
+                      scanResult.putBoolean("success", false)
+                    }
                 }
               }
             }
@@ -104,6 +97,27 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
 
   override fun getName(): String {
     return NAME
+  }
+
+  private fun parseMrzData(mrzData: MRZData): WritableNativeMap {
+    val mappedResult = WritableNativeMap()
+    for (field in mrzData.fields) {
+      mappedResult.putString(field.key.name, field.value.value)
+    }
+    return mappedResult
+  }
+
+  private fun parsePdfData(pdfData: PDF417Data): WritableNativeMap {
+    val parser = DLParser()
+    parser.setup(reactApplicationContext, parserKey)
+    val res = parser.parse(pdfData.barcodeData)
+    val mappedResult = WritableNativeMap()
+
+    for (field in res.javaClass.declaredFields) {
+      mappedResult.putString(field.name, field.get(res)?.toString())
+    }
+
+    return mappedResult
   }
 
   @ReactMethod

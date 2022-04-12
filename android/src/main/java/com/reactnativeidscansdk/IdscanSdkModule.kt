@@ -127,7 +127,7 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
     if (apiKeys.isNull(KEY_MRZ_KEY) || apiKeys.isNull(KEY_PDF_KEY) || apiKeys.isNull(KEY_PARSER_KEY)) {
       val scanResult = Arguments.createMap()
       scanResult.putString("success", "false")
-      callback.invoke("Must provide activation keys for IDScan.net's camera scanner and id parser SDKs")
+      callback.invoke("Must provide activation keys for IDScan.net's Camera Scanner and ID Parser SDKs")
       return
     }
 

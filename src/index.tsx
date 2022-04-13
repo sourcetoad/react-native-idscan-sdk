@@ -21,7 +21,7 @@ const IdscanSdk = NativeModules.IdscanSdk
 // SDK Constants
 const SDKConstants = IdscanSdk.getConstants();
 
-export const IDScanner_Constants = {
+export const IDSCANNER_CONSTANTS = {
   /**
    * Combined PDF and MRZ Scanner
    */

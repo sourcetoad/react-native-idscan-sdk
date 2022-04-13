@@ -41,13 +41,13 @@ allprojects {
 
 ```js
 import { TouchableOpacity, Text } from 'react-native'
-import { scan, IDScanner_Constants } from 'react-native-idscan-sdk';
+import { scan, IDSCANNER_CONSTANTS } from 'react-native-idscan-sdk';
 
 // ...
 
 const onScanID = () => {
   scan(
-    IDScanner_Constants.TYPE_PDF, // TYPE_COMBINED, TYPE_MRZ, TYPE_PDF
+    IDSCANNER_CONSTANTS.TYPE_PDF, // TYPE_COMBINED, TYPE_MRZ, TYPE_PDF
     {
       // iOS
       iosDetectorPDFLicenseKey: 'iOS IdScanner PDF License Key here',

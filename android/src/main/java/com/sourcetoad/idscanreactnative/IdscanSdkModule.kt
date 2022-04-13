@@ -1,4 +1,4 @@
-package com.reactnativeidscansdk
+package com.sourcetoad.idscanreactnative
 
 import android.Manifest
 import android.app.Activity

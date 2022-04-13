@@ -8,17 +8,46 @@ React Native ID Scanner wrapper for idscan sdk
 npm install react-native-idscan-sdk
 ```
 
+## iOS Quirks
+
+This plugins requires the following usage descriptions added to the application plist:
+
+- `NSCameraUsageDescription` specifies the reason for your app to access the device’s camera.
+- `NSPhotoLibraryUsageDescription` specifies the reason for your app to access the user’s photo library.
+
+## Android Quirks
+
+- Add idscan-public maven repository to the project build.gradle file.
+
+```
+allprojects {
+    repositories {
+        ...
+        maven {
+            url 'https://www.myget.org/F/idscan-public/maven/'
+        }
+        ...
+    }
+}
+```
+
+- Insert the following into the project `AndroidManifest.xml` to request camera permission.
+
+```
+<uses-permission android:name="android.permission.CAMERA" />
+```
+
 ## Usage
 
 ```js
 import { TouchableOpacity, Text } from 'react-native'
-import { scan, IDScanner_Constants } from 'react-native-idscan-sdk';
+import { scan, IDSCANNER_CONSTANTS } from 'react-native-idscan-sdk';
 
 // ...
 
 const onScanID = () => {
   scan(
-    IDScanner_Constants.TYPE_PDF, // TYPE_COMBINED, TYPE_MRZ, TYPE_PDF
+    IDSCANNER_CONSTANTS.TYPE_PDF, // TYPE_COMBINED, TYPE_MRZ, TYPE_PDF
     {
       // iOS
       iosDetectorPDFLicenseKey: 'iOS IdScanner PDF License Key here',
@@ -44,33 +73,45 @@ const onScanID = () => {
 
 ```
 
-## iOS Quirks
-
-This plugins requires the following usage descriptions:
-
-- `NSCameraUsageDescription` specifies the reason for your app to access the device's camera.
-- `NSPhotoLibraryUsageDescription` specifies the reason for your app to access the user's photo library.
-
-## Android Quirks
-
-- Add idscan-public maven repository to the project build.gradle file.
+### PDF417 Response
 
 ```
-allprojects {
-    repositories {
-        ...
-        maven {
-            url 'https://www.myget.org/F/idscan-public/maven/'
-        }
-        ...
-    }
+{
+  namePrefix: string;
+  IIN: string;
+  race: string;
+  gender: string;
+  fullName: string;
+  issuerIdNum: string;
+  city: string;
+  weight: string;
+  height: string;
+  address1: string;
+  address2: string;
+  classificationCode: string;
+  issueDate: string;
+  licenseNumber: string;
+  expirationDate: string;
+  endorsementsCode: string;
+  issuedBy: string;
+  firstName: string;
+  middleName: string;
+  lastName: string;
+  nameSuffix: string;
+  restrictionsCode: string;
+  birthDate: string;
+  countryCode: string;
+  jurisdictionCode: string;
+  hairColor: string;
+  eyeColor: string;
+  documentType: string;
+  country: string;
+  weightKG: string;
+  weightLBS: string;
+  restrictionCode: string;
+  postalCode: string;
+  specification: string;
 }
-```
-
-- You must ask for camera permission. Insert this to your project's `AndroidManifest.xml`
-
-```
-<uses-permission android:name="android.permission.CAMERA" />
 ```
 
 ## Contributing

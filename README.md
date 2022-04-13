@@ -10,10 +10,10 @@ npm install react-native-idscan-sdk
 
 ## iOS Quirks
 
-This plugins requires the following usage descriptions:
+This plugins requires the following usage descriptions added to the application plist:
 
-- `NSCameraUsageDescription` specifies the reason for your app to access the device's camera.
-- `NSPhotoLibraryUsageDescription` specifies the reason for your app to access the user's photo library.
+- `NSCameraUsageDescription` specifies the reason for your app to access the device’s camera.
+- `NSPhotoLibraryUsageDescription` specifies the reason for your app to access the user’s photo library.
 
 ## Android Quirks
 
@@ -31,7 +31,7 @@ allprojects {
 }
 ```
 
-- You must ask for camera permission. Insert this to your project's `AndroidManifest.xml`
+- Insert the following into the project `AndroidManifest.xml` to request camera permission.
 
 ```
 <uses-permission android:name="android.permission.CAMERA" />

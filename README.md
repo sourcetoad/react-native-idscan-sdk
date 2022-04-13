@@ -8,25 +8,25 @@ React Native ID Scanner wrapper for idscan sdk
 npm install react-native-idscan-sdk
 ```
 
-## iOS Quirks
+## iOS Setup
 
 This plugins requires the following usage descriptions added to the application plist:
 
 - `NSCameraUsageDescription` specifies the reason for your app to access the device’s camera.
 - `NSPhotoLibraryUsageDescription` specifies the reason for your app to access the user’s photo library.
 
-## Android Quirks
+## Android Setup
 
 - Add idscan-public maven repository to the project build.gradle file.
 
-```
+```groovy
 allprojects {
     repositories {
-        ...
+        // ...
         maven {
             url 'https://www.myget.org/F/idscan-public/maven/'
         }
-        ...
+        // ...
     }
 }
 ```
@@ -75,7 +75,7 @@ const onScanID = () => {
 
 ### PDF417 Response
 
-```
+```js
 {
   namePrefix: string;
   IIN: string;
@@ -116,7 +116,7 @@ const onScanID = () => {
 
 ### MRZ Response
 
-```
+```js
 {
   Dob: string;
   DocumentNumber: string;
@@ -134,16 +134,10 @@ const onScanID = () => {
 }
 ```
 
-- You must ask for camera permission. Insert this to your project's `AndroidManifest.xml`
-
-```
-<uses-permission android:name="android.permission.CAMERA" />
-```
-
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
 ## License
 
-MIT
+[MIT](LICENSE.md)

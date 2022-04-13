@@ -1,4 +1,4 @@
-package com.reactnativeidscansdk
+package com.sourcetoad.idscanreactnative
 
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.ReactApplicationContext

@@ -73,6 +73,27 @@ allprojects {
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
+
+### MRZ Response
+
+```
+{
+  Dob: string;
+  DocumentNumber: string;
+  DocumentType: string;
+  Exp: string;
+  FirstName: string;
+  FullName: string;
+  Gender: string;
+  IssuingState: string;
+  LastName: string;
+  Line1: string;
+  Line2: string;
+  Line3: string;
+  Nationality: string;
+}
+```
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.

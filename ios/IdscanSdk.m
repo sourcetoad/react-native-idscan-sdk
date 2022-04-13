@@ -56,10 +56,10 @@ RCT_EXPORT_METHOD(scan:(NSString *)type apiKeys: (NSDictionary *)apiKeys callbac
             parsedData = [mrzParser parse:result];
         }
         
-        [formattedData setObject: @"true" forKey: @"success"];
+        [formattedData setObject: @(true) forKey: @"success"];
         [formattedData setObject: parsedData forKey: @"data"];
     } else {
-        [formattedData setObject: @"false" forKey: @"success"];
+        [formattedData setObject: @(false) forKey: @"success"];
         [formattedData setObject: [NSNull null] forKey: @"data"];
     }
 

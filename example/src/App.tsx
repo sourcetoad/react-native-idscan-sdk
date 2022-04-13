@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import { scan, IDScanner_Constants } from 'react-native-idscan-sdk';
+import { scan, IDSCANNER_CONSTANTS } from 'react-native-idscan-sdk';
 
 export default function App() {
   const [result, setResult] = React.useState<object | undefined>();
@@ -9,7 +9,7 @@ export default function App() {
   // methods
   const triggerScanner = () => {
     scan(
-      IDScanner_Constants.TYPE_PDF,
+      IDSCANNER_CONSTANTS.TYPE_PDF,
       {
         // iOS
         iosDetectorPDFLicenseKey: 'iOS IdScanner PDF License Key here',

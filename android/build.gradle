@@ -65,4 +65,5 @@ dependencies {
     implementation 'net.idscan.components.android:multiscan:1.5.1'
     implementation 'net.idscan.components.android:multiscan-mrz:1.5.1'
     implementation 'net.idscan.components.android:multiscan-pdf417:1.5.1'
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
 }

@@ -151,18 +151,25 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
 
   private fun showDefaultScanView() {
     if (checkCameraPermissions()) {
-      MultiScanActivity.build(currentActivity!!)
-        .withComponent(
-          PDF417Component.build()
-            .withLicenseKey(scannerPDFKey!!)
-            .complete()
-        )
-        .withComponent(
+      val multiScanActivity = MultiScanActivity.build(currentActivity!!)
+
+      if (!(scannerMRZKey!!).isNullOrEmpty()){
+        multiScanActivity.withComponent(
           MRZComponent.build()
             .withLicenseKey(scannerMRZKey!!)
             .complete()
         )
-        .start(SCAN_ACTIVITY_CODE)
+      }
+
+      if (!(scannerPDFKey!!).isNullOrEmpty()) {
+        multiScanActivity.withComponent(
+          PDF417Component.build()
+            .withLicenseKey(scannerPDFKey!!)
+            .complete()
+        )
+      }
+
+      multiScanActivity.start(SCAN_ACTIVITY_CODE)
     } else {
       requestCameraPermissions(REQUEST_CAMERA_PERMISSIONS_DEFAULT)
     }

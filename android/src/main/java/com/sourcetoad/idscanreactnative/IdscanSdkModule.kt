@@ -120,9 +120,10 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
   fun scan(type: String?, apiKeys: ReadableMap, callback: Callback) {
     Log.d(NAME, "React Native IDScanner starting")
 
-    if (apiKeys.isNull(KEY_MRZ_KEY) || apiKeys.isNull(KEY_PDF_KEY) || apiKeys.isNull(KEY_PARSER_KEY)) {
+    if ((apiKeys.isNull(KEY_MRZ_KEY) && apiKeys.isNull(KEY_PDF_KEY)) || apiKeys.isNull(KEY_PARSER_KEY)) {
       val scanResult = Arguments.createMap()
       scanResult.putString("success", "false")
+
       callback.invoke("Must provide activation keys for IDScan.net's Camera Scanner and ID Parser SDKs")
       return
     }

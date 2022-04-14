@@ -120,7 +120,11 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
   fun scan(type: String?, apiKeys: ReadableMap, callback: Callback) {
     Log.d(NAME, "React Native IDScanner starting")
 
-    if (apiKeys.isNull(KEY_MRZ_KEY) || apiKeys.isNull(KEY_PDF_KEY) || apiKeys.isNull(KEY_PARSER_KEY)) {
+    val hasMRZKey = apiKeys.hasKey(KEY_MRZ_KEY) && !apiKeys.isNull(KEY_MRZ_KEY)
+    val hasPDFKey = apiKeys.hasKey(KEY_PDF_KEY) && !apiKeys.isNull(KEY_PDF_KEY)
+    val hasParserKey = apiKeys.hasKey(KEY_PARSER_KEY) && !apiKeys.isNull(KEY_PARSER_KEY)
+
+    if ((!hasMRZKey && !hasPDFKey) || !hasParserKey) {
       val scanResult = Arguments.createMap()
       scanResult.putString("success", "false")
       callback.invoke("Must provide activation keys for IDScan.net's Camera Scanner and ID Parser SDKs")
@@ -128,8 +132,8 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
     }
 
     scannerType = type
-    scannerMRZKey = apiKeys.getString(KEY_MRZ_KEY)
-    scannerPDFKey = apiKeys.getString(KEY_PDF_KEY)
+    scannerMRZKey = if (hasMRZKey) apiKeys.getString(KEY_MRZ_KEY) else ""
+    scannerPDFKey = if (hasPDFKey) apiKeys.getString(KEY_PDF_KEY) else ""
     parserKey = apiKeys.getString(KEY_PARSER_KEY)
 
     this.callback = callback
@@ -151,18 +155,25 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
 
   private fun showDefaultScanView() {
     if (checkCameraPermissions()) {
-      MultiScanActivity.build(currentActivity!!)
-        .withComponent(
-          PDF417Component.build()
-            .withLicenseKey(scannerPDFKey!!)
-            .complete()
-        )
-        .withComponent(
+      val multiScanActivity = MultiScanActivity.build(currentActivity!!)
+
+      if (!(scannerMRZKey!!).isNullOrEmpty()){
+        multiScanActivity.withComponent(
           MRZComponent.build()
             .withLicenseKey(scannerMRZKey!!)
             .complete()
         )
-        .start(SCAN_ACTIVITY_CODE)
+      }
+
+      if (!(scannerPDFKey!!).isNullOrEmpty()) {
+        multiScanActivity.withComponent(
+          PDF417Component.build()
+            .withLicenseKey(scannerPDFKey!!)
+            .complete()
+        )
+      }
+
+      multiScanActivity.start(SCAN_ACTIVITY_CODE)
     } else {
       requestCameraPermissions(REQUEST_CAMERA_PERMISSIONS_DEFAULT)
     }

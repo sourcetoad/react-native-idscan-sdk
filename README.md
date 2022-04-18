@@ -1,6 +1,6 @@
 # react-native-idscan-sdk
 
-React Native ID Scanner wrapper for idscan sdk
+React Native ID Scanner wrapper for IDScan.net [ID Parsing](https://idscan.net/scanning-solutions/enterprise/id-parsing-sdk/) and [Camera](https://docs.idscan.net/camerascan/index.html).
 
 ## Installation
 

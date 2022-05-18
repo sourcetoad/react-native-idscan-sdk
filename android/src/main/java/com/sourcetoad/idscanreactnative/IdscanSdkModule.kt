@@ -18,6 +18,7 @@ import net.idscan.components.android.multiscan.components.mrz.MRZComponent
 import net.idscan.components.android.multiscan.components.mrz.MRZData
 import net.idscan.components.android.multiscan.components.pdf417.PDF417Component
 import net.idscan.components.android.multiscan.components.pdf417.PDF417Data
+import kotlin.collections.HashMap
 
 @ReactModule(name = IdscanSdkModule.NAME)
 class IdscanSdkModule(reactContext: ReactApplicationContext) :
@@ -27,6 +28,7 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
   private var scannerPDFKey: String? = null
   private var scannerMRZKey: String? = null
   private var parserKey: String? = null
+  private var callbackCalled: Boolean = false;
 
   private val mActivityEventListener: ActivityEventListener =
     object : BaseActivityEventListener() {
@@ -83,9 +85,9 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
           Log.d(NAME, errorMessage)
           if (errorMessage.length > 1) {
             scanResult.putString("success", "false")
-            callback!!.invoke(errorMessage, scanResult)
+            executeCallback(errorMessage, scanResult)
           } else {
-            callback!!.invoke(null, scanResult)
+            executeCallback(null, scanResult)
           }
         }
       }
@@ -101,6 +103,15 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
       mappedResult.putString(field.key.name, field.value.value)
     }
     return mappedResult
+  }
+
+  private fun executeCallback(vararg args: Any?) {
+    if (callbackCalled) {
+      return
+    }
+
+    callback!!.invoke(*args)
+    callbackCalled = true
   }
 
   private fun parsePdfData(pdfData: PDF417Data): WritableNativeMap {
@@ -137,6 +148,7 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
     parserKey = apiKeys.getString(KEY_PARSER_KEY)
 
     this.callback = callback
+    this.callbackCalled = false
     showDefaultScanView()
   }
 

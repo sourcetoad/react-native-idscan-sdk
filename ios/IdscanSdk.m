@@ -59,16 +59,20 @@ RCT_EXPORT_METHOD(scan:(NSString *)type apiKeys: (NSDictionary *)apiKeys callbac
         if (parsedData != nil) {
           [formattedData setObject: @(true) forKey: @"success"];
           [formattedData setObject: parsedData forKey: @"data"];
+            
+          self.scannerCallback(@[[NSNull null], formattedData]);
         } else {
           [formattedData setObject: @(false) forKey: @"success"];
           [formattedData setObject: [NSNull null] forKey: @"data"];
+            
+          self.scannerCallback(@[@"Invalid Drivers License", formattedData]);
         }
     } else {
         [formattedData setObject: @(false) forKey: @"success"];
         [formattedData setObject: [NSNull null] forKey: @"data"];
+        
+        self.scannerCallback(@[[NSNull null], formattedData]);
     }
-
-    self.scannerCallback(@[[NSNull null], formattedData]);
 }
 
 - (NSDictionary *)constantsToExport

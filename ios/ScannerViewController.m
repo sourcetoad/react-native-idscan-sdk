@@ -95,6 +95,22 @@
 - (void)initCapture
 {
     self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    
+    if (@available(iOS 13.0, *)) {
+        AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInUltraWideCamera]
+            mediaType:AVMediaTypeVideo
+            position:AVCaptureDevicePositionBack];
+
+        NSArray *captureDevices = [captureDeviceDiscoverySession devices];
+
+        if (captureDevices.count > 0) {
+            NSLog(@"Supports ultrawide camera");
+            
+            self.device = captureDevices[0];
+        }
+    }
+
+    
     AVCaptureDeviceInput *captureInput = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
     AVCaptureVideoDataOutput *captureOutput = [[AVCaptureVideoDataOutput alloc] init];
     captureOutput.alwaysDiscardsLateVideoFrames = YES;

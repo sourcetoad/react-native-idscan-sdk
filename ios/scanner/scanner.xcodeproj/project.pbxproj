@@ -17,6 +17,7 @@
 		FEC2F67928BD0B2200F6C893 /* IDScanPDFDetector in Frameworks */ = {isa = PBXBuildFile; productRef = FEC2F67828BD0B2200F6C893 /* IDScanPDFDetector */; };
 		FEC2F67C28BD0B3D00F6C893 /* IDScanMRZParser in Frameworks */ = {isa = PBXBuildFile; productRef = FEC2F67B28BD0B3D00F6C893 /* IDScanMRZParser */; };
 		FEC2F67E28BD0B3D00F6C893 /* IDScanPDFParser in Frameworks */ = {isa = PBXBuildFile; productRef = FEC2F67D28BD0B3D00F6C893 /* IDScanPDFParser */; };
+		FEEFA4B828BE422000755008 /* ScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEFA4B728BE422000755008 /* ScannerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FEC2F66A28BD0A7F00F6C893 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEC2F66D28BD0A7F00F6C893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEC2F66F28BD0A7F00F6C893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEEFA4B728BE422000755008 /* ScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				FEC2F66128BD0A7D00F6C893 /* AppDelegate.swift */,
 				FEC2F66328BD0A7D00F6C893 /* SceneDelegate.swift */,
 				FEC2F66528BD0A7D00F6C893 /* ViewController.swift */,
+				FEEFA4B728BE422000755008 /* ScannerController.swift */,
 				FEC2F66728BD0A7D00F6C893 /* Main.storyboard */,
 				FEC2F66A28BD0A7F00F6C893 /* Assets.xcassets */,
 				FEC2F66C28BD0A7F00F6C893 /* LaunchScreen.storyboard */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEEFA4B828BE422000755008 /* ScannerController.swift in Sources */,
 				FEC2F66628BD0A7D00F6C893 /* ViewController.swift in Sources */,
 				FEC2F66228BD0A7D00F6C893 /* AppDelegate.swift in Sources */,
 				FEC2F66428BD0A7D00F6C893 /* SceneDelegate.swift in Sources */,

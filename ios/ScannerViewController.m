@@ -10,12 +10,10 @@
     AVCaptureDevice *_device;
     AVCaptureVideoPreviewLayer *_prevLayer;
     bool running;
-    NSString * lastFormat;
-    
+    NSString *lastFormat;
     MainScreenState state;
-    
-    CGImageRef    decodeImage;
-    NSString *    decodeResult;
+    CGImageRef decodeImage;
+    NSString *decodeResult;
     size_t width;
     size_t height;
     size_t bytesPerRow;
@@ -32,7 +30,7 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
 #if TARGET_IPHONE_SIMULATOR
     NSLog(@"IDScanner: On iOS simulator camera is not supported");
     [self.delegate returnScanResult:self scanResult:nil];
@@ -51,7 +49,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.prevLayer = nil;
     [[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(decodeResultNotification:) name: DecoderResultNotification object: nil];
 }
@@ -83,10 +81,10 @@
                 [self.device setTorchMode:AVCaptureTorchModeOff];
             else
                 [self.device setTorchMode:AVCaptureTorchModeOn];
-            
+
             if ([self.device isFocusModeSupported: AVCaptureFocusModeContinuousAutoFocus])
                 self.device.focusMode = AVCaptureFocusModeContinuousAutoFocus;
-            
+
             [self.device unlockForConfiguration];
         }
     }
@@ -95,7 +93,7 @@
 - (void)initCapture
 {
     self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    
+
     if (@available(iOS 13.0, *)) {
         AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInUltraWideCamera]
             mediaType:AVMediaTypeVideo
@@ -105,32 +103,31 @@
 
         if (captureDevices.count > 0) {
             NSLog(@"Supports ultrawide camera");
-            
+
             self.device = captureDevices[0];
         }
     }
 
-    
     AVCaptureDeviceInput *captureInput = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
     AVCaptureVideoDataOutput *captureOutput = [[AVCaptureVideoDataOutput alloc] init];
     captureOutput.alwaysDiscardsLateVideoFrames = YES;
     [captureOutput setSampleBufferDelegate:self queue:dispatch_get_main_queue()];
-    
+
     // Set the video output to store frame in BGRA (It is supposed to be faster)
     NSString* key = (NSString*)kCVPixelBufferPixelFormatTypeKey;
-    
+
     // Set the video output to store frame in 422YpCbCr8(It is supposed to be faster)
     NSNumber* value = [NSNumber numberWithUnsignedInt:kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange];
     NSDictionary* videoSettings = [NSDictionary dictionaryWithObject:value forKey:key];
     [captureOutput setVideoSettings:videoSettings];
-    
+
     // Create a capture session
     self.captureSession = [[AVCaptureSession alloc] init];
-    
+
     // We add input and output
     [self.captureSession addInput:captureInput];
     [self.captureSession addOutput:captureOutput];
-    
+
     if ([self.captureSession canSetSessionPreset:AVCaptureSessionPreset1280x720]) {
         NSLog(@"Set preview port to 1280X720");
         self.captureSession.sessionPreset = AVCaptureSessionPreset1280x720;
@@ -140,45 +137,29 @@
             NSLog(@"Set preview port to 640X480");
             self.captureSession.sessionPreset = AVCaptureSessionPreset640x480;
         }
-    
-    // Limit camera FPS to 15 for single core devices (iPhone 4 and older) so more CPU power is available for decoder
-    host_basic_info_data_t hostInfo;
-    mach_msg_type_number_t infoCount;
-    infoCount = HOST_BASIC_INFO_COUNT;
-    host_info(mach_host_self(), HOST_BASIC_INFO, (host_info_t)&hostInfo, &infoCount);
-    
-    if (hostInfo.max_cpus < 2) {
-        if ([self.device respondsToSelector:@selector(setActiveVideoMinFrameDuration:)]) {
-            [self.device lockForConfiguration:nil];
-            [self.device setActiveVideoMinFrameDuration:CMTimeMake(1, 15)];
-            [self.device unlockForConfiguration];
-        } else {
-            AVCaptureConnection *conn = [captureOutput connectionWithMediaType:AVMediaTypeVideo];
-            [conn setVideoMinFrameDuration:CMTimeMake(1, 15)];
-        }
-    }
-    
+
     // We add the preview layer
     self.prevLayer = [AVCaptureVideoPreviewLayer layerWithSession: self.captureSession];
-    
-    if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
+
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    if (orientation == UIInterfaceOrientationLandscapeLeft) {
         self.prevLayer.connection.videoOrientation = AVCaptureVideoOrientationLandscapeLeft;
         self.prevLayer.frame = CGRectMake(0, 0, MAX(self.view.frame.size.width,self.view.frame.size.height), MIN(self.view.frame.size.width,self.view.frame.size.height));
     }
-    if (self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+    if (orientation == UIInterfaceOrientationLandscapeRight) {
         self.prevLayer.connection.videoOrientation = AVCaptureVideoOrientationLandscapeRight;
         self.prevLayer.frame = CGRectMake(0, 0, MAX(self.view.frame.size.width,self.view.frame.size.height), MIN(self.view.frame.size.width,self.view.frame.size.height));
     }
-    
-    if (self.interfaceOrientation == UIInterfaceOrientationPortrait) {
+
+    if (orientation == UIInterfaceOrientationPortrait) {
         self.prevLayer.connection.videoOrientation = AVCaptureVideoOrientationPortrait;
         self.prevLayer.frame = CGRectMake(0, 0, MIN(self.view.frame.size.width,self.view.frame.size.height), MAX(self.view.frame.size.width,self.view.frame.size.height));
     }
-    if (self.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
+    if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
         self.prevLayer.connection.videoOrientation = AVCaptureVideoOrientationPortraitUpsideDown;
         self.prevLayer.frame = CGRectMake(0, 0, MIN(self.view.frame.size.width,self.view.frame.size.height), MAX(self.view.frame.size.width,self.view.frame.size.height));
     }
-    
+
     self.prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     [self.view.layer addSublayer: self.prevLayer];
 #if USE_MWOVERLAY
@@ -186,7 +167,7 @@
 #endif
 
     self.focusTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(reFocus) userInfo:nil repeats:YES];
-    
+
     [self CustomOverlay];
 }
 
@@ -194,7 +175,7 @@
 {
     CGRect bounds = self.view.bounds;
     bounds = CGRectMake(0, 0, bounds.size.width, bounds.size.height);
-    
+
     UIView* overlayView = [[UIView alloc] initWithFrame:bounds];
     overlayView.autoresizesSubviews = YES;
     overlayView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -239,7 +220,7 @@
         return;
     }
     running = YES;
-    
+
     // lock device and set focus mode
     NSError *error = nil;
     if ([self.device lockForConfiguration: &error]) {
@@ -271,23 +252,21 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     if (self.state != CAMERA_DECODING) {
         self.state = CAMERA_DECODING;
     }
-    
+
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    
-    // get image
     CIImage *ciImage = [CIImage imageWithCVPixelBuffer:imageBuffer];
-    
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
-        
+
         // activate license
         NSString *scannerType = [settings objectForKey:@"scannerType"];
-        
+
         IDScanPDFDetector *pdfDetector = [IDScanPDFDetector detectorWithActivationKey: [settings objectForKey:@"scannerPDFKey"]];
         IDScanMRZDetector *mrzDetector = [IDScanMRZDetector detectorWithActivationKey: [settings objectForKey:@"scannerMRZKey"]];
-        
+
         NSString *result = @"";
-        
+
         // detect based on scanner Type
         if ([scannerType isEqualToString:@"pdf"]) {
             result = [pdfDetector detectFromImage:ciImage][@"string"];
@@ -296,19 +275,19 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         } else {
             // combined scanner
             result = [pdfDetector detectFromImage:ciImage][@"string"];
-            
+
             if ([result length] < 4) {
                 result = [mrzDetector detectFromImage:ciImage][@"string"];
             }
         }
-        
+
         // Ignore results less than 4 characters - probably false detection
         if ([result length] > 4) {
             self.state = CAMERA;
-            
-            if (decodeImage != nil) {
-                CGImageRelease(decodeImage);
-                decodeImage = nil;
+
+            if (self->decodeImage != nil) {
+                CGImageRelease(self->decodeImage);
+                self->decodeImage = nil;
             }
 
             dispatch_async(dispatch_get_main_queue(), ^(void) {
@@ -322,18 +301,17 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
             self.state = CAMERA;
         }
     });
-    
 }
 
 #pragma mark -
 #pragma mark Memory management
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
     [self stopScanning];
-    
+
     self.prevLayer = nil;
-    [super viewDidUnload];
+    [super didReceiveMemoryWarning];
 }
 
 - (void)dealloc {
@@ -366,7 +344,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 #if USE_MWOVERLAY
         [MWOverlay removeFromPreviewLayer];
 #endif
-        
+
 #if !__has_feature(objc_arc)
         [self.captureSession release];
 #endif
@@ -378,12 +356,12 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 
 - (void)decodeResultNotification: (NSNotification *)notification {
-    
+
     if ([notification.object isKindOfClass:[DecoderResult class]]) {
         DecoderResult *obj = (DecoderResult*)notification.object;
         if (obj.succeeded) {
             decodeResult = [[NSString alloc] initWithString:obj.result];
-            
+
             // Call the delegate to return the decodeResult and dismiss the camera view
             [self.delegate returnScanResult:self scanResult:decodeResult];
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -391,15 +369,9 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     }
 }
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        [self startScanning];
-    }
-}
+- (enum UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
 
-- (NSUInteger)supportedInterfaceOrientations {
-    UIInterfaceOrientation interfaceOrientation =[[UIApplication sharedApplication] statusBarOrientation];
-    
     switch (interfaceOrientation) {
         case UIInterfaceOrientationPortrait:
             return UIInterfaceOrientationMaskPortrait;
@@ -416,16 +388,12 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         default:
             break;
     }
-    
+
     return UIInterfaceOrientationMaskAll;
 }
 
 - (BOOL) shouldAutorotate {
     return YES;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {

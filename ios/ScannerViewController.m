@@ -257,8 +257,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     }
 
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    CIImage *ciImage = [CIImage imageWithCVPixelBuffer:imageBuffer];
-    CIImage *newImage = [self adjust:ciImage];
+    CIImage *ciImage = [self adjust:[CIImage imageWithCVPixelBuffer:imageBuffer] saturation:1.0 shadow:0.3 contrast:1.2 brightness:0.0 sharpnessLuminance:2.0];
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
@@ -272,15 +271,15 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         NSString *result = @"";
         // detect based on scanner Type
         if ([scannerType isEqualToString:@"pdf"]) {
-            result = [pdfDetector detectFromImage:newImage][@"string"];
+            result = [pdfDetector detectFromImage:ciImage][@"string"];
         } else if ([scannerType isEqualToString:@"mrz"]) {
-            result = [mrzDetector detectFromImage:newImage][@"string"];
+            result = [mrzDetector detectFromImage:ciImage][@"string"];
         } else {
             // combined scanner
-            result = [pdfDetector detectFromImage:newImage][@"string"];
+            result = [pdfDetector detectFromImage:ciImage][@"string"];
 
             if ([result length] < 4) {
-                result = [mrzDetector detectFromImage:newImage][@"string"];
+                result = [mrzDetector detectFromImage:ciImage][@"string"];
             }
         }
 
@@ -306,43 +305,45 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     });
 }
 
-- (CIImage *)adjust:(CIImage *)ciImage {
-    
+- (CIImage *)adjust:(CIImage *)ciImage
+         saturation:(float)saturation
+             shadow:(float)shadow
+           contrast:(float)contrast
+         brightness:(float)brightness
+ sharpnessLuminance:(float)sharpnessLuminance
+{
     // saturation
     CIFilter *filter = [CIFilter filterWithName:@"CIColorControls"];
     [filter setValue:ciImage forKey:kCIInputImageKey];
-    [filter setValue:[NSNumber numberWithFloat: 1.0] forKey:kCIInputSaturationKey];
+    [filter setValue:[NSNumber numberWithFloat: saturation] forKey:kCIInputSaturationKey];
     ciImage = [filter valueForKey:kCIOutputImageKey];
     
     // shadow
     CIFilter *shadowFilter = [CIFilter filterWithName:@"CIHighlightShadowAdjust"];
     [shadowFilter setValue:ciImage forKey:kCIInputImageKey];
-    [shadowFilter setValue:[NSNumber numberWithFloat: 0.3] forKey:@"inputShadowAmount"];
+    [shadowFilter setValue:[NSNumber numberWithFloat: shadow] forKey:@"inputShadowAmount"];
     ciImage = [shadowFilter valueForKey:kCIOutputImageKey];
     
     // contrast
     CIFilter *contrastFilter = [CIFilter filterWithName:@"CIColorControls"];
     [contrastFilter setValue:ciImage forKey:kCIInputImageKey];
-    [contrastFilter setValue:[NSNumber numberWithFloat: 1.2] forKey:kCIInputContrastKey];
+    [contrastFilter setValue:[NSNumber numberWithFloat: contrast] forKey:kCIInputContrastKey];
     ciImage = [contrastFilter valueForKey:kCIOutputImageKey];
     
     // brightness
     CIFilter *brightnessFilter = [CIFilter filterWithName:@"CIColorControls"];
     [brightnessFilter setValue:ciImage forKey:kCIInputImageKey];
-    [brightnessFilter setValue:[NSNumber numberWithFloat: 0.0] forKey:kCIInputBrightnessKey];
+    [brightnessFilter setValue:[NSNumber numberWithFloat: brightness] forKey:kCIInputBrightnessKey];
     ciImage = [brightnessFilter valueForKey:kCIOutputImageKey];
     
-
     // sharpnessLuminance
     CIFilter *sharpnessLuminanceFilter = [CIFilter filterWithName:@"CISharpenLuminance"];
     [sharpnessLuminanceFilter setValue:ciImage forKey:kCIInputImageKey];
-    [sharpnessLuminanceFilter setValue:[NSNumber numberWithFloat: 2.0] forKey:kCIInputSharpnessKey];
+    [sharpnessLuminanceFilter setValue:[NSNumber numberWithFloat: sharpnessLuminance] forKey:kCIInputSharpnessKey];
     ciImage = [sharpnessLuminanceFilter valueForKey:kCIOutputImageKey];
 
     return ciImage;
 }
-        
-
 
 #pragma mark -
 #pragma mark Memory management

@@ -218,7 +218,7 @@ PODS:
   - React-jsinspector (0.68.0)
   - React-logger (0.68.0):
     - glog
-  - react-native-idscan-sdk (0.1.0):
+  - react-native-idscan-sdk (0.3.0):
     - React-Core
   - React-perflogger (0.68.0)
   - React-RCTActionSheet (0.68.0):
@@ -395,11 +395,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: a7c83b31436843459a1961bfd74b96033dc77234
-  DoubleConversion: cde416483dac037923206447da6e1454df403714
+  DoubleConversion: 831926d9b8bf8166fd87886c4abab286c2422662
   FBLazyVector: d2fd875e2b24bbc350722df0df9d383cb891b9f2
   FBReactNativeSpec: 7493e074a31512df3253160059295264a84b8149
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
-  glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
+  glog: 476ee3e89abb49e07f822b48323c51c57124b572
   RCT-Folly: 4d8508a426467c48885f1151029bc15fa5d7b3b8
   RCTRequired: bab4a7c3d7eb9553b13773ee190f279712efd1fc
   RCTTypeSafety: efbeb6e450ff6cef8e19c2cb5314c6d8bfeeef77
@@ -413,7 +413,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 010a66edf644339f6da72b34208b070089680415
   React-jsinspector: 90f0bfd5d04e0b066c29216a110ffb9a6c34f23f
   React-logger: 8474fefa09d05f573a13c044cb0dfd751d4e52e3
-  react-native-idscan-sdk: 85ace0be9b3d64408fcbbbba4768cde37fa222df
+  react-native-idscan-sdk: 4d45217bc535faf7c411e6247b1eb8a6507c1310
   React-perflogger: 15cb741d6c2379f4d3fc8f9e4d4e1110ef3020cb
   React-RCTActionSheet: ea9099db0597bd769430db1e2d011fd5fdb7fc5e
   React-RCTAnimation: 252df4749866f2654f37612f839522cac91c1165
@@ -430,4 +430,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: ab59e48bef4677d9d279df353a73581b0f9df2cd
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

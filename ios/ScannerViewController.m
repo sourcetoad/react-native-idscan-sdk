@@ -95,7 +95,7 @@
     self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
 
     if (@available(iOS 13.0, *)) {
-        AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInUltraWideCamera]
+        AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera]
             mediaType:AVMediaTypeVideo
             position:AVCaptureDevicePositionBack];
 
@@ -226,6 +226,9 @@
     if ([self.device lockForConfiguration: &error]) {
         if ([self.device isFocusModeSupported: AVCaptureFocusModeContinuousAutoFocus])
             self.device.focusMode = AVCaptureFocusModeContinuousAutoFocus;
+        
+        if ([self.device isExposureModeSupported: AVCaptureExposureModeContinuousAutoExposure])
+            self.device.exposureMode = AVCaptureExposureModeContinuousAutoExposure;
     }
 }
 
@@ -254,7 +257,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     }
 
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    CIImage *ciImage = [CIImage imageWithCVPixelBuffer:imageBuffer];
+    CIImage *ciImage = [self adjust:[CIImage imageWithCVPixelBuffer:imageBuffer] saturation:1.0 shadow:0.3 contrast:1.2 brightness:0.0 sharpnessLuminance:2.0];
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
@@ -266,7 +269,6 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         IDScanMRZDetector *mrzDetector = [IDScanMRZDetector detectorWithActivationKey: [settings objectForKey:@"scannerMRZKey"]];
 
         NSString *result = @"";
-
         // detect based on scanner Type
         if ([scannerType isEqualToString:@"pdf"]) {
             result = [pdfDetector detectFromImage:ciImage][@"string"];
@@ -301,6 +303,46 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
             self.state = CAMERA;
         }
     });
+}
+
+- (CIImage *)adjust:(CIImage *)ciImage
+         saturation:(float)saturation
+             shadow:(float)shadow
+           contrast:(float)contrast
+         brightness:(float)brightness
+ sharpnessLuminance:(float)sharpnessLuminance
+{
+    // saturation
+    CIFilter *filter = [CIFilter filterWithName:@"CIColorControls"];
+    [filter setValue:ciImage forKey:kCIInputImageKey];
+    [filter setValue:[NSNumber numberWithFloat: saturation] forKey:kCIInputSaturationKey];
+    ciImage = [filter valueForKey:kCIOutputImageKey];
+    
+    // shadow
+    CIFilter *shadowFilter = [CIFilter filterWithName:@"CIHighlightShadowAdjust"];
+    [shadowFilter setValue:ciImage forKey:kCIInputImageKey];
+    [shadowFilter setValue:[NSNumber numberWithFloat: shadow] forKey:@"inputShadowAmount"];
+    ciImage = [shadowFilter valueForKey:kCIOutputImageKey];
+    
+    // contrast
+    CIFilter *contrastFilter = [CIFilter filterWithName:@"CIColorControls"];
+    [contrastFilter setValue:ciImage forKey:kCIInputImageKey];
+    [contrastFilter setValue:[NSNumber numberWithFloat: contrast] forKey:kCIInputContrastKey];
+    ciImage = [contrastFilter valueForKey:kCIOutputImageKey];
+    
+    // brightness
+    CIFilter *brightnessFilter = [CIFilter filterWithName:@"CIColorControls"];
+    [brightnessFilter setValue:ciImage forKey:kCIInputImageKey];
+    [brightnessFilter setValue:[NSNumber numberWithFloat: brightness] forKey:kCIInputBrightnessKey];
+    ciImage = [brightnessFilter valueForKey:kCIOutputImageKey];
+    
+    // sharpnessLuminance
+    CIFilter *sharpnessLuminanceFilter = [CIFilter filterWithName:@"CISharpenLuminance"];
+    [sharpnessLuminanceFilter setValue:ciImage forKey:kCIInputImageKey];
+    [sharpnessLuminanceFilter setValue:[NSNumber numberWithFloat: sharpnessLuminance] forKey:kCIInputSharpnessKey];
+    ciImage = [sharpnessLuminanceFilter valueForKey:kCIOutputImageKey];
+
+    return ciImage;
 }
 
 #pragma mark -

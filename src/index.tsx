@@ -51,9 +51,9 @@ export function scan(
 ) {
   IdscanSdk.scan(type, apiKeys, (error: object, data: DLData) => {
     if (Platform.OS === 'android') {
-      data.birthDate = data.birthDate || data.birthdate
-      data.IIN = data.IIN || data.iin
-    } 
+      data.birthDate = data.birthDate || data.birthdate;
+      data.IIN = data.IIN || data.iin;
+    }
     onScanComplete(error, data);
   });
 }

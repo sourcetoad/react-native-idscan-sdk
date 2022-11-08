@@ -78,8 +78,7 @@ const onScanID = () => {
 ```js
 {
   namePrefix: string;
-  IIN?: string;
-  iin?: string;
+  IIN: string;
   race: string;
   gender: string;
   fullName: string;
@@ -102,8 +101,7 @@ const onScanID = () => {
   nameSuffix: string;
   restrictionsCode: string;
   restrictionsCodeDescription: string;
-  birthDate?: string;
-  birthdate?: string;
+  birthDate: string;
   countryCode: string;
   jurisdictionCode: string;
   hairColor: string;
@@ -115,7 +113,7 @@ const onScanID = () => {
   restrictionCode: string;
   postalCode: string;
   specification: string;
-  HAZMATEExpDate: string;
+  hazmateExpDate: string;
   cardRevisionDate: string;
   complianceType: string;
 }

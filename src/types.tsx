@@ -2,9 +2,9 @@
  * Drivers License Data Format
  */
 export type DLData = {
+  [key: string]: string;
   namePrefix: string;
-  IIN?: string;
-  iin?: string;
+  IIN: string;
   race: string;
   gender: string;
   fullName: string;
@@ -27,8 +27,7 @@ export type DLData = {
   nameSuffix: string;
   restrictionsCode: string;
   restrictionsCodeDescription: string;
-  birthDate?: string;
-  birthdate?: string;
+  birthDate: string;
   countryCode: string;
   jurisdictionCode: string;
   hairColor: string;
@@ -40,7 +39,7 @@ export type DLData = {
   restrictionCode: string;
   postalCode: string;
   specification: string;
-  HAZMATEExpDate: string;
+  hazmateExpDate: string;
   cardRevisiondate: string;
   complianceType: string;
 };

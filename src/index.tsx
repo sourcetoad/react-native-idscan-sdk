@@ -53,6 +53,7 @@ export function scan(
     if (Platform.OS === 'android') {
       data.birthDate = data.birthDate || data.birthdate;
       data.IIN = data.IIN || data.iin;
+      data.hazmateExpDate = data.HAZMATEExpDate;
     }
     onScanComplete(error, data);
   });

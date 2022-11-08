@@ -78,7 +78,8 @@ const onScanID = () => {
 ```js
 {
   namePrefix: string;
-  IIN: string;
+  IIN?: string;
+  iin?: string;
   race: string;
   gender: string;
   fullName: string;
@@ -93,13 +94,16 @@ const onScanID = () => {
   licenseNumber: string;
   expirationDate: string;
   endorsementsCode: string;
+  endorsementsCodeDescription: string;
   issuedBy: string;
   firstName: string;
   middleName: string;
   lastName: string;
   nameSuffix: string;
   restrictionsCode: string;
-  birthDate: string;
+  restrictionsCodeDescription: string;
+  birthDate?: string;
+  birthdate?: string;
   countryCode: string;
   jurisdictionCode: string;
   hairColor: string;
@@ -111,6 +115,9 @@ const onScanID = () => {
   restrictionCode: string;
   postalCode: string;
   specification: string;
+  HAZMATEExpDate: string;
+  cardRevisionDate: string;
+  complianceType: string;
 }
 ```
 
@@ -133,6 +140,23 @@ const onScanID = () => {
   Nationality: string;
 }
 ```
+
+### Platform Specific Attributes
+
+## Android
+
+- `restrictionsCodeDescription` 
+- `endorsementsCodeDescription`
+- `restrictionsCode`
+- `specification`
+
+## iOS
+
+- `weight` 
+- `issuerIdNum`
+- `restrictionsNum`
+- `cardRevisionDate`
+- `complianceType`
 
 ## Contributing
 

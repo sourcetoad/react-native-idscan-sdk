@@ -3,7 +3,8 @@
  */
 export type DLData = {
   namePrefix: string;
-  IIN: string;
+  IIN?: string;
+  iin?: string;
   race: string;
   gender: string;
   fullName: string;
@@ -18,13 +19,16 @@ export type DLData = {
   licenseNumber: string;
   expirationDate: string;
   endorsementsCode: string;
+  endorsementsCodeDescription: string;
   issuedBy: string;
   firstName: string;
   middleName: string;
   lastName: string;
   nameSuffix: string;
   restrictionsCode: string;
-  birthDate: string;
+  restrictionsCodeDescription: string;
+  birthDate?: string;
+  birthdate?: string;
   countryCode: string;
   jurisdictionCode: string;
   hairColor: string;
@@ -36,6 +40,9 @@ export type DLData = {
   restrictionCode: string;
   postalCode: string;
   specification: string;
+  HAZMATEExpDate: string;
+  cardRevisiondate: string;
+  complianceType: string;
 };
 
 /**

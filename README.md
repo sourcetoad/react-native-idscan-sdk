@@ -93,12 +93,14 @@ const onScanID = () => {
   licenseNumber: string;
   expirationDate: string;
   endorsementsCode: string;
+  endorsementsCodeDescription: string;
   issuedBy: string;
   firstName: string;
   middleName: string;
   lastName: string;
   nameSuffix: string;
   restrictionsCode: string;
+  restrictionsCodeDescription: string;
   birthDate: string;
   countryCode: string;
   jurisdictionCode: string;
@@ -111,6 +113,9 @@ const onScanID = () => {
   restrictionCode: string;
   postalCode: string;
   specification: string;
+  hazmateExpDate: string;
+  cardRevisionDate: string;
+  complianceType: string;
 }
 ```
 
@@ -133,6 +138,23 @@ const onScanID = () => {
   Nationality: string;
 }
 ```
+
+### Platform Specific Attributes
+
+## Android
+
+- `restrictionsCodeDescription` 
+- `endorsementsCodeDescription`
+- `restrictionsCode`
+- `specification`
+
+## iOS
+
+- `weight` 
+- `issuerIdNum`
+- `restrictionsNum`
+- `cardRevisionDate`
+- `complianceType`
 
 ## Contributing
 

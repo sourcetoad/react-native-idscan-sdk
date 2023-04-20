@@ -25,11 +25,11 @@
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "prepare": "bob build",
+    "build": "bob build",
     "release": "release-it",
-    "example": "yarn --cwd example",
+    "example": "npm run --cwd example",
     "pods": "cd example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "bootstrap": "npm run example && npm install && npm run pods"
   },
   "keywords": [
     "react-native",

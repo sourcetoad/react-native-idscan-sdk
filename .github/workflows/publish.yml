@@ -17,12 +17,12 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 14
-          cache: 'yarn'
+          node-version: 18
+          cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Yarn Install
-        run: yarn install --network-concurrency 1
+      - name: NPM Install
+        run: npm ci
 
       - name: Publish (NPM)
         run: npm publish --provenance --access public

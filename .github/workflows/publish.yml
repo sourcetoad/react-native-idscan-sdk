@@ -2,7 +2,7 @@ name: Publish to NPM
 on:
   release:
     types: [published]
-permission:
+permissions:
   id-token: write
 
 jobs:

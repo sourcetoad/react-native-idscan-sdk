@@ -92,20 +92,37 @@
 
 - (void)initCapture
 {
-    self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    NSMutableArray *deviceTypes = [NSMutableArray array];
 
     if (@available(iOS 13.0, *)) {
-        AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera]
-            mediaType:AVMediaTypeVideo
-            position:AVCaptureDevicePositionBack];
+        [deviceTypes addObject:AVCaptureDeviceTypeBuiltInTripleCamera];
+        [deviceTypes addObject:AVCaptureDeviceTypeBuiltInDualWideCamera];
+        [deviceTypes addObject:AVCaptureDeviceTypeBuiltInUltraWideCamera];
+    }
 
-        NSArray *captureDevices = [captureDeviceDiscoverySession devices];
+    if(@available(iOS 11.1, *)) {
+        [deviceTypes addObject:AVCaptureDeviceTypeBuiltInTrueDepthCamera];
+    }
 
-        if (captureDevices.count > 0) {
-            NSLog(@"Supports ultrawide camera");
+    if(@available(iOS 10.2, *)) {
+        [deviceTypes addObject:AVCaptureDeviceTypeBuiltInDualCamera];
+    }
 
-            self.device = captureDevices[0];
-        }
+    if(@available(iOS 10.0, *)) {
+        [deviceTypes addObject:AVCaptureDeviceTypeBuiltInTelephotoCamera];
+        [deviceTypes addObject:AVCaptureDeviceTypeBuiltInWideAngleCamera];
+    }
+
+    AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession = [AVCaptureDeviceDiscoverySession
+                                                                      discoverySessionWithDeviceTypes:deviceTypes
+                                                                      mediaType:AVMediaTypeVideo
+                                                                      position:AVCaptureDevicePositionBack];
+
+    NSArray *captureDevices = [captureDeviceDiscoverySession devices];
+    if (captureDevices.count > 0) {
+        self.device = captureDevices[0];
+    } else {
+        self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     }
 
     AVCaptureDeviceInput *captureInput = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
@@ -226,7 +243,7 @@
     if ([self.device lockForConfiguration: &error]) {
         if ([self.device isFocusModeSupported: AVCaptureFocusModeContinuousAutoFocus])
             self.device.focusMode = AVCaptureFocusModeContinuousAutoFocus;
-        
+
         if ([self.device isExposureModeSupported: AVCaptureExposureModeContinuousAutoExposure])
             self.device.exposureMode = AVCaptureExposureModeContinuousAutoExposure;
     }
@@ -317,25 +334,25 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     [filter setValue:ciImage forKey:kCIInputImageKey];
     [filter setValue:[NSNumber numberWithFloat: saturation] forKey:kCIInputSaturationKey];
     ciImage = [filter valueForKey:kCIOutputImageKey];
-    
+
     // shadow
     CIFilter *shadowFilter = [CIFilter filterWithName:@"CIHighlightShadowAdjust"];
     [shadowFilter setValue:ciImage forKey:kCIInputImageKey];
     [shadowFilter setValue:[NSNumber numberWithFloat: shadow] forKey:@"inputShadowAmount"];
     ciImage = [shadowFilter valueForKey:kCIOutputImageKey];
-    
+
     // contrast
     CIFilter *contrastFilter = [CIFilter filterWithName:@"CIColorControls"];
     [contrastFilter setValue:ciImage forKey:kCIInputImageKey];
     [contrastFilter setValue:[NSNumber numberWithFloat: contrast] forKey:kCIInputContrastKey];
     ciImage = [contrastFilter valueForKey:kCIOutputImageKey];
-    
+
     // brightness
     CIFilter *brightnessFilter = [CIFilter filterWithName:@"CIColorControls"];
     [brightnessFilter setValue:ciImage forKey:kCIInputImageKey];
     [brightnessFilter setValue:[NSNumber numberWithFloat: brightness] forKey:kCIInputBrightnessKey];
     ciImage = [brightnessFilter valueForKey:kCIOutputImageKey];
-    
+
     // sharpnessLuminance
     CIFilter *sharpnessLuminanceFilter = [CIFilter filterWithName:@"CISharpenLuminance"];
     [sharpnessLuminanceFilter setValue:ciImage forKey:kCIInputImageKey];

@@ -422,9 +422,6 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     if (@available(iOS 15.0, *)) {
         NSInteger deviceMinimumFocusDistance = [self.device minimumFocusDistance];
         
-        
-            NSLog(@"dummer zoom hhjhj %ld", deviceMinimumFocusDistance);
-        
         if (deviceMinimumFocusDistance == -1) {
             return;
         }

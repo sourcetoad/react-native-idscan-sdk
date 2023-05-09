@@ -183,7 +183,7 @@
     [MWOverlay addToPreviewLayer: self.prevLayer];
 #endif
 
-    self.focusTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(reFocus) userInfo:nil repeats:YES];
+    self.focusTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(reFocus) userInfo:nil repeats:YES];
 
     [self CustomOverlay];
 }

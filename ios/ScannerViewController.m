@@ -383,7 +383,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 - (void) startScanning {
     self.state = LAUNCHING_CAMERA;
     
-    dispatch_async(dispatch_get_main_queue(), ^(void) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self.captureSession startRunning];
         [self setRecommendedZoomFactor];
     });
@@ -420,14 +420,14 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 - (void) setRecommendedZoomFactor {
     if (@available(iOS 15.0, *)) {
-        NSInteger deviceMinimumFocusDistance = [self.device minimumFocusDistance];
+        float deviceMinimumFocusDistance = [self.device minimumFocusDistance];
         
         if (deviceMinimumFocusDistance == -1) {
             return;
         }
         
         CMVideoDimensions formatDimensions = CMVideoFormatDescriptionGetDimensions([self.device.activeFormat formatDescription]);
-        float rectOfInterestWidth = formatDimensions.height / formatDimensions.width;
+        float rectOfInterestWidth = (float)formatDimensions.height / (float)formatDimensions.width;
         
         float deviceFieldOfView = [self.device.activeFormat videoFieldOfView];
         float minimumSubjectDistanceForCode = [self minimumSubjectDistanceForCode:deviceFieldOfView minimumCodeSize:20 previewFillPercentage:rectOfInterestWidth];

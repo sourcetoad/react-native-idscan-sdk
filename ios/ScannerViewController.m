@@ -183,7 +183,7 @@
     [MWOverlay addToPreviewLayer: self.prevLayer];
 #endif
 
-    self.focusTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(reFocus) userInfo:nil repeats:YES];
+    self.focusTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(reFocus) userInfo:nil repeats:YES];
 
     [self CustomOverlay];
 }
@@ -382,7 +382,12 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 - (void) startScanning {
     self.state = LAUNCHING_CAMERA;
-    [self.captureSession startRunning];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self.captureSession startRunning];
+        [self setRecommendedZoomFactor];
+    });
+    
     self.prevLayer.hidden = NO;
     self.state = CAMERA;
 }
@@ -413,6 +418,57 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     }
 }
 
+- (void) setRecommendedZoomFactor {
+    if (@available(iOS 15.0, *)) {
+        float deviceMinimumFocusDistance = [self.device minimumFocusDistance];
+        
+        if (deviceMinimumFocusDistance == -1) {
+            return;
+        }
+        
+        CMVideoDimensions formatDimensions = CMVideoFormatDescriptionGetDimensions([self.device.activeFormat formatDescription]);
+        float rectOfInterestWidth = (float)formatDimensions.height / (float)formatDimensions.width;
+        
+        float deviceFieldOfView = [self.device.activeFormat videoFieldOfView];
+        float minimumSubjectDistanceForCode = [self minimumSubjectDistanceForCode:deviceFieldOfView minimumCodeSize:20 previewFillPercentage:rectOfInterestWidth];
+        
+        if (minimumSubjectDistanceForCode < deviceMinimumFocusDistance) {
+            float zoomFactor = deviceMinimumFocusDistance / minimumSubjectDistanceForCode;
+            
+            @try {
+                NSError *error;
+                if ([self.device lockForConfiguration:&error]) {
+                    self.device.videoZoomFactor = zoomFactor;
+                    
+                    [self.device unlockForConfiguration];
+                }
+            }
+            @catch (id exceptionError) {
+                NSLog(@"Could not lock for configuration");
+            }
+        }
+    }
+}
+
+- (float) minimumSubjectDistanceForCode:(float)fieldOfView
+                        minimumCodeSize:(float)minimumCodeSize
+                  previewFillPercentage:(float)previewFillPercentage
+{
+    /*
+        Given the camera horizontal field of view, we can compute the distance (mm) to make a code
+        of minimumCodeSize (mm) fill the previewFillPercentage.
+     */
+    float fieldOfViewDivided = fieldOfView / 2;
+    float radians = [self degreesToRadians: fieldOfViewDivided];
+    float filledCodeSize = minimumCodeSize / previewFillPercentage;
+    
+    return filledCodeSize / tan(radians);
+}
+
+- (float) degreesToRadians:(float)degrees
+{
+    return degrees * M_PI / 180;
+}
 
 - (void)decodeResultNotification: (NSNotification *)notification {
 

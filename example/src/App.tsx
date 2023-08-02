@@ -47,7 +47,7 @@ export default function App() {
       >
         <Text>Scan ID</Text>
       </TouchableOpacity>
-      <Text>Result: {JSON.stringify(result)}</Text>
+      <Text>Result: {JSON.stringify(result, null, 4)}</Text>
     </View>
   );
 }

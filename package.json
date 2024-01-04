@@ -27,9 +27,11 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "build": "bob build",
     "release": "release-it",
-    "example": "npm run --cwd example",
+    "example:start": "cd example && npm run start",
+    "example:android": "cd example && npm run android",
+    "example:ios": "cd example && npm run ios",
     "pods": "cd example && pod-install --quiet",
-    "bootstrap": "npm run example && npm install && npm run pods"
+    "bootstrap": "cd example && npm install && pod-install --quiet"
   },
   "keywords": [
     "react-native",

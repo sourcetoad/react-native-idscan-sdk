@@ -31,11 +31,20 @@ RCT_EXPORT_METHOD(scan:(NSString *)type apiKeys: (NSDictionary *)apiKeys callbac
     [[NSUserDefaults standardUserDefaults] synchronize];
 
     dispatch_async(dispatch_get_main_queue(), ^(void) {
-        ScannerViewController* scannerViewController = [[ScannerViewController alloc] init];
+        ScannerViewController *scannerViewController = [[ScannerViewController alloc] init];
         scannerViewController.delegate = self;
         NSLog(@"IDScanner: Starting camera scanner...");
-
-        UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+        
+        UIWindow *windowRoot = nil;
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for (UIWindow *window in windows) {
+            if (window.isKeyWindow) {
+                windowRoot = window;
+                break;
+            }
+        }
+        
+        UIViewController *rootViewController = [windowRoot rootViewController];
         [rootViewController presentViewController:scannerViewController animated:YES completion:nil];
     });
 }

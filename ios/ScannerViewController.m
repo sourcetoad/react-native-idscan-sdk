@@ -157,8 +157,11 @@
 
     // We add the preview layer
     self.prevLayer = [AVCaptureVideoPreviewLayer layerWithSession: self.captureSession];
+    
+    UIWindow *firstWindow = [[[UIApplication sharedApplication] windows] firstObject];
+    UIWindowScene *windowScene = firstWindow.windowScene;
+    UIInterfaceOrientation orientation = windowScene.interfaceOrientation;
 
-    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     if (orientation == UIInterfaceOrientationLandscapeLeft) {
         self.prevLayer.connection.videoOrientation = AVCaptureVideoOrientationLandscapeLeft;
         self.prevLayer.frame = CGRectMake(0, 0, MAX(self.view.frame.size.width,self.view.frame.size.height), MIN(self.view.frame.size.width,self.view.frame.size.height));
@@ -485,8 +488,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 }
 
 - (enum UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-
+    UIWindow *firstWindow = [[[UIApplication sharedApplication] windows] firstObject];
+    UIWindowScene *windowScene = firstWindow.windowScene;
+    UIInterfaceOrientation interfaceOrientation = windowScene.interfaceOrientation;
+    
     switch (interfaceOrientation) {
         case UIInterfaceOrientationPortrait:
             return UIInterfaceOrientationMaskPortrait;

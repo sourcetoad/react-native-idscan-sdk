@@ -2,10 +2,7 @@
 #import "IdscanSdk.h"
 #import "ScannerViewController.h"
 #import <AVFoundation/AVFoundation.h>
-
-// parsers
-@import IDScanPDFParser;
-@import IDScanMRZParser;
+#import "react_native_idscan_sdk-Swift.h"
 
 @implementation IdscanSdk
 
@@ -54,23 +51,21 @@ RCT_EXPORT_METHOD(scan:(NSString *)type apiKeys: (NSDictionary *)apiKeys callbac
     NSMutableDictionary *formattedData = [NSMutableDictionary dictionary];
 
     if (result != nil) {
-        // activate parser
-        IDScanPDFParser *pdfParser = [IDScanPDFParser parserWithActivationKey:self.parserKey];
-        IDScanMRZParser *mrzParser = [[IDScanMRZParser alloc] init];
-
-        NSDictionary<NSString *, NSString *> *parsedData;
-        if ([self.scannerType isEqualToString:@"pdf"]) {
-            parsedData = [pdfParser parse:result];
-        } else if ([self.scannerType isEqualToString:@"mrz"]) {
-            parsedData = [mrzParser parse:result];
-        } else {
-            // Due to IDScan corrupting our input during PDF Parser, we must copy into another var.
-            NSString *copiedResult = [NSString stringWithFormat:@"%@", result];
-            parsedData = [pdfParser parse:copiedResult];
-            if (parsedData == nil) {
-                parsedData = [mrzParser parse:result];
-            }
+        // initialize parser
+        IDScanIDParser *parser = [IDScanIDParser new];
+        BOOL isLicensed = [parser setLicense:self.parserKey];
+      
+        // check if licensed
+        if (!isLicensed) {
+            NSLog(@"IDScanner: Failed to set license for IDScanIDParser. Key: %@", self.parserKey);
+            [formattedData setObject: @(false) forKey: @"success"];
+            [formattedData setObject: [NSNull null] forKey: @"data"];
+            self.scannerCallback(@[@"Parser license error", formattedData]);
+            return;
         }
+
+        // parse regardless of scanner type since it's already combined
+        NSDictionary<NSString *, NSString *> *parsedData = [parser parse:result];
 
         if (parsedData != nil) {
           [formattedData setObject: @(true) forKey: @"success"];

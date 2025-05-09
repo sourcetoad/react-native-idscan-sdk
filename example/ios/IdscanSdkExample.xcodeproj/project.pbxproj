@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,6 @@
 		3CBD1EE228053C3200DEFBF9 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD1EE128053C3200DEFBF9 /* AppDelegate.mm */; };
 		3CBD1EE328053C3200DEFBF9 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD1EE128053C3200DEFBF9 /* AppDelegate.mm */; };
 		4C39C56BAD484C67AA576FFA /* libPods-IdscanSdkExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3E69C5B9553B26FBA2DF04 /* libPods-IdscanSdkExample.a */; };
-		714F88E72DCCB2240056922F /* IDScanIDParser in Frameworks */ = {isa = PBXBuildFile; productRef = 714F88E62DCCB2240056922F /* IDScanIDParser */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8A94EAE9DA2D9321822C8A17 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 99E308A178296E134CA05CD5 /* PrivacyInfo.xcprivacy */; };
 		A37BD2B4C5BA0F0D8B8041C7 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 85CDABC7266782D45AD2F397 /* PrivacyInfo.xcprivacy */; };
@@ -87,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				714F88E72DCCB2240056922F /* IDScanIDParser in Frameworks */,
 				4C39C56BAD484C67AA576FFA /* libPods-IdscanSdkExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,11 +558,7 @@
 				);
 				INFOPLIST_FILE = IdscanSdkExampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -583,11 +577,7 @@
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = IdscanSdkExampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -609,10 +599,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = IdscanSdkExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -636,10 +623,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = IdscanSdkExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -666,10 +650,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "IdscanSdkExample-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -696,10 +677,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "IdscanSdkExample-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -725,11 +703,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "IdscanSdkExample-tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -755,11 +729,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "IdscanSdkExample-tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -822,10 +792,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					/usr/lib/swift,
-					"$(inherited)",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"$(SDKROOT)/usr/lib/swift",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
@@ -884,10 +851,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					/usr/lib/swift,
-					"$(inherited)",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"$(SDKROOT)/usr/lib/swift",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
@@ -953,25 +917,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		714F88E52DCCB2240056922F /* XCRemoteSwiftPackageReference "IDScanIDParserIOS" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/IDScanNet/IDScanIDParserIOS";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.250513.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		714F88E62DCCB2240056922F /* IDScanIDParser */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 714F88E52DCCB2240056922F /* XCRemoteSwiftPackageReference "IDScanIDParserIOS" */;
-			productName = IDScanIDParser;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }

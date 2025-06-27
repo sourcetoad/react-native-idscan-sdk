@@ -1,0 +1,4285 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IDScanIDParserNative",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DriverLicense",
+        "printedName": "DriverLicense",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "twoDigitYearMaxForExpirationDate",
+            "printedName": "twoDigitYearMaxForExpirationDate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV32twoDigitYearMaxForExpirationDateSiSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV32twoDigitYearMaxForExpirationDateSiSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV32twoDigitYearMaxForExpirationDateSiSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV32twoDigitYearMaxForExpirationDateSiSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hasDetails",
+            "printedName": "hasDetails",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV10hasDetailsSbSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV10hasDetailsSbSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV10hasDetailsSbSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV10hasDetailsSbSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "address1",
+            "printedName": "address1",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV8address1SSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8address1SSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV8address1SSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8address1SSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "address2",
+            "printedName": "address2",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV8address2SSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8address2SSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV8address2SSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8address2SSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "birthdate",
+            "printedName": "birthdate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV9birthdateSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9birthdateSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV9birthdateSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9birthdateSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cardRevisionDate",
+            "printedName": "cardRevisionDate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV16cardRevisionDateSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV16cardRevisionDateSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV16cardRevisionDateSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV16cardRevisionDateSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "city",
+            "printedName": "city",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV4citySSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV4citySSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV4citySSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV4citySSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "classificationCode",
+            "printedName": "classificationCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV18classificationCodeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV18classificationCodeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV18classificationCodeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV18classificationCodeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "complianceType",
+            "printedName": "complianceType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV14complianceTypeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV14complianceTypeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV14complianceTypeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV14complianceTypeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "country",
+            "printedName": "country",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV7countrySSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV7countrySSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV7countrySSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV7countrySSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "countryCode",
+            "printedName": "countryCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV11countryCodeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV11countryCodeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV11countryCodeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV11countryCodeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "documentType",
+            "printedName": "documentType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV12documentTypeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV12documentTypeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV12documentTypeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV12documentTypeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "documentDiscriminator",
+            "printedName": "documentDiscriminator",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV21documentDiscriminatorSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV21documentDiscriminatorSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV21documentDiscriminatorSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV21documentDiscriminatorSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "inventoryControlNumber",
+            "printedName": "inventoryControlNumber",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV22inventoryControlNumberSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV22inventoryControlNumberSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV22inventoryControlNumberSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV22inventoryControlNumberSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "endorsementsCode",
+            "printedName": "endorsementsCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV16endorsementsCodeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV16endorsementsCodeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV16endorsementsCodeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV16endorsementsCodeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "endorsementCodeDescription",
+            "printedName": "endorsementCodeDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV26endorsementCodeDescriptionSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV26endorsementCodeDescriptionSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV26endorsementCodeDescriptionSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV26endorsementCodeDescriptionSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "expirationDate",
+            "printedName": "expirationDate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV14expirationDateSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV14expirationDateSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV14expirationDateSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV14expirationDateSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "eyeColor",
+            "printedName": "eyeColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV8eyeColorSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8eyeColorSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV8eyeColorSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8eyeColorSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "firstName",
+            "printedName": "firstName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV9firstNameSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9firstNameSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV9firstNameSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9firstNameSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fullName",
+            "printedName": "fullName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV8fullNameSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8fullNameSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV8fullNameSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8fullNameSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "gender",
+            "printedName": "gender",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV6genderSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV6genderSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV6genderSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV6genderSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hairColor",
+            "printedName": "hairColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV9hairColorSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9hairColorSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV9hairColorSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9hairColorSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hazmatExpDate",
+            "printedName": "hazmatExpDate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV13hazmatExpDateSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV13hazmatExpDateSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV13hazmatExpDateSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV13hazmatExpDateSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "height",
+            "printedName": "height",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV6heightSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV6heightSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV6heightSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV6heightSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "iin",
+            "printedName": "iin",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV3iinSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV3iinSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV3iinSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV3iinSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "issuedBy",
+            "printedName": "issuedBy",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV8issuedBySSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8issuedBySSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV8issuedBySSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8issuedBySSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "issueDate",
+            "printedName": "issueDate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV9issueDateSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9issueDateSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV9issueDateSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9issueDateSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "jurisdictionCode",
+            "printedName": "jurisdictionCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV16jurisdictionCodeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV16jurisdictionCodeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV16jurisdictionCodeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV16jurisdictionCodeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "lastName",
+            "printedName": "lastName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV8lastNameSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8lastNameSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV8lastNameSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8lastNameSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "licenseNumber",
+            "printedName": "licenseNumber",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV13licenseNumberSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV13licenseNumberSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV13licenseNumberSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV13licenseNumberSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "discretionaryIdNumber",
+            "printedName": "discretionaryIdNumber",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV21discretionaryIdNumberSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV21discretionaryIdNumberSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV21discretionaryIdNumberSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV21discretionaryIdNumberSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "limitedDurationDocument",
+            "printedName": "limitedDurationDocument",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV23limitedDurationDocumentSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV23limitedDurationDocumentSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV23limitedDurationDocumentSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV23limitedDurationDocumentSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "middleName",
+            "printedName": "middleName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV10middleNameSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV10middleNameSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV10middleNameSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV10middleNameSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "namePrefix",
+            "printedName": "namePrefix",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV10namePrefixSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV10namePrefixSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV10namePrefixSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV10namePrefixSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nameSuffix",
+            "printedName": "nameSuffix",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV10nameSuffixSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV10nameSuffixSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV10nameSuffixSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV10nameSuffixSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "organDonor",
+            "printedName": "organDonor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV10organDonorSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV10organDonorSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV10organDonorSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV10organDonorSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "postalBox",
+            "printedName": "postalBox",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV9postalBoxSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9postalBoxSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV9postalBoxSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9postalBoxSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "postalCode",
+            "printedName": "postalCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV10postalCodeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV10postalCodeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV10postalCodeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV10postalCodeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "race",
+            "printedName": "race",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV4raceSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV4raceSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV4raceSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV4raceSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "reference",
+            "printedName": "reference",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV9referenceSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9referenceSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV9referenceSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9referenceSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "realId",
+            "printedName": "realId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV6realIdSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV6realIdSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV6realIdSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV6realIdSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "restrictionCode",
+            "printedName": "restrictionCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV15restrictionCodeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV15restrictionCodeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV15restrictionCodeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV15restrictionCodeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "restrictionCodeDescription",
+            "printedName": "restrictionCodeDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV26restrictionCodeDescriptionSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV26restrictionCodeDescriptionSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV26restrictionCodeDescriptionSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV26restrictionCodeDescriptionSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "specification",
+            "printedName": "specification",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV13specificationSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV13specificationSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV13specificationSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV13specificationSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "vehicleClassCode",
+            "printedName": "vehicleClassCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV16vehicleClassCodeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV16vehicleClassCodeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV16vehicleClassCodeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV16vehicleClassCodeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "vehicleClassCodeDescription",
+            "printedName": "vehicleClassCodeDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV27vehicleClassCodeDescriptionSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV27vehicleClassCodeDescriptionSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV27vehicleClassCodeDescriptionSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV27vehicleClassCodeDescriptionSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "veteran",
+            "printedName": "veteran",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV7veteranSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV7veteranSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV7veteranSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV7veteranSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "weightKG",
+            "printedName": "weightKG",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV8weightKGSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8weightKGSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV8weightKGSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8weightKGSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "weightLBS",
+            "printedName": "weightLBS",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV9weightLBSSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9weightLBSSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV9weightLBSSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9weightLBSSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "mmiC_LicenseType",
+            "printedName": "mmiC_LicenseType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV05mmiC_E4TypeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV05mmiC_E4TypeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV05mmiC_E4TypeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV05mmiC_E4TypeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "mmiC_PractitionerNumber",
+            "printedName": "mmiC_PractitionerNumber",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV23mmiC_PractitionerNumberSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV23mmiC_PractitionerNumberSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV23mmiC_PractitionerNumberSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV23mmiC_PractitionerNumberSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "validationConfidence",
+            "printedName": "validationConfidence",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV20validationConfidenceSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV20validationConfidenceSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV20validationConfidenceSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV20validationConfidenceSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "validationCodes",
+            "printedName": "validationCodes",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV15validationCodesSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV15validationCodesSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV15validationCodesSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV15validationCodesSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "verificationErrors",
+            "printedName": "verificationErrors",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV18verificationErrorsSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV18verificationErrorsSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV18verificationErrorsSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV18verificationErrorsSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "caC_CardType",
+            "printedName": "caC_CardType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV12caC_CardTypeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV12caC_CardTypeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV12caC_CardTypeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV12caC_CardTypeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "caC_PersonDesignatorType",
+            "printedName": "caC_PersonDesignatorType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV24caC_PersonDesignatorTypeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV24caC_PersonDesignatorTypeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV24caC_PersonDesignatorTypeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV24caC_PersonDesignatorTypeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "caC_EDIPI",
+            "printedName": "caC_EDIPI",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV9caC_EDIPISSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9caC_EDIPISSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV9caC_EDIPISSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9caC_EDIPISSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "caC_PersonnelCategoryCode",
+            "printedName": "caC_PersonnelCategoryCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV25caC_PersonnelCategoryCodeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV25caC_PersonnelCategoryCodeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV25caC_PersonnelCategoryCodeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV25caC_PersonnelCategoryCodeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "caC_BranchCode",
+            "printedName": "caC_BranchCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV14caC_BranchCodeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV14caC_BranchCodeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV14caC_BranchCodeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV14caC_BranchCodeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "caC_PersonnelEntitlementConditionType",
+            "printedName": "caC_PersonnelEntitlementConditionType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV37caC_PersonnelEntitlementConditionTypeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV37caC_PersonnelEntitlementConditionTypeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV37caC_PersonnelEntitlementConditionTypeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV37caC_PersonnelEntitlementConditionTypeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "caC_Rank",
+            "printedName": "caC_Rank",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV8caC_RankSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8caC_RankSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV8caC_RankSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV8caC_RankSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "caC_PayPlanCode",
+            "printedName": "caC_PayPlanCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV15caC_PayPlanCodeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV15caC_PayPlanCodeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV15caC_PayPlanCodeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV15caC_PayPlanCodeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "caC_PayPlanGradeCode",
+            "printedName": "caC_PayPlanGradeCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV20caC_PayPlanGradeCodeSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV20caC_PayPlanGradeCodeSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV20caC_PayPlanGradeCodeSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV20caC_PayPlanGradeCodeSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "caC_CardInstanceIdentifier",
+            "printedName": "caC_CardInstanceIdentifier",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV26caC_CardInstanceIdentifierSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV26caC_CardInstanceIdentifierSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV26caC_CardInstanceIdentifierSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV26caC_CardInstanceIdentifierSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "passportSeries",
+            "printedName": "passportSeries",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV14passportSeriesSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV14passportSeriesSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV14passportSeriesSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV14passportSeriesSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "personalNumber",
+            "printedName": "personalNumber",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV14personalNumberSSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV14personalNumberSSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV14personalNumberSSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV14personalNumberSSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "driveOnly",
+            "printedName": "driveOnly",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV9driveOnlySSSgvp",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9driveOnlySSSgvp",
+            "moduleName": "IDScanIDParserNative",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV9driveOnlySSSgvg",
+                "mangledName": "$s20IDScanIDParserNative13DriverLicenseV9driveOnlySSSgvg",
+                "moduleName": "IDScanIDParserNative",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "createDemoData",
+            "printedName": "createDemoData()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DriverLicense",
+                "printedName": "IDScanIDParserNative.DriverLicense",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV14createDemoDataACyFZ",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV14createDemoDataACyFZ",
+            "moduleName": "IDScanIDParserNative",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DriverLicense",
+                "printedName": "IDScanIDParserNative.DriverLicense",
+                "usr": "s:20IDScanIDParserNative13DriverLicenseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "IDScanIDParserNative",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20IDScanIDParserNative13DriverLicenseV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s20IDScanIDParserNative13DriverLicenseV6encode2toys7Encoder_p_tKF",
+            "moduleName": "IDScanIDParserNative",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:20IDScanIDParserNative13DriverLicenseV",
+        "mangledName": "$s20IDScanIDParserNative13DriverLicenseV",
+        "moduleName": "IDScanIDParserNative",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Function",
+        "name": "setLicense",
+        "printedName": "setLicense(_:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Bool",
+            "printedName": "Swift.Bool",
+            "usr": "s:Sb"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "UnsafePointer",
+            "printedName": "Swift.UnsafePointer<Swift.Int8>",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int8",
+                "printedName": "Swift.Int8",
+                "usr": "s:s4Int8V"
+              }
+            ],
+            "usr": "s:SP"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "c:(cm)setLicense:",
+        "mangledName": "$s20IDScanIDParserNative10setLicenseySbSPys4Int8VGF",
+        "moduleName": "IDScanIDParserNative",
+        "declAttributes": [
+          "AccessControl",
+          "CDecl",
+          "RawDocComment"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "parseDL",
+        "printedName": "parseDL(_:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Optional",
+            "printedName": "Swift.UnsafeMutablePointer<Swift.Int8>?",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UnsafeMutablePointer",
+                "printedName": "Swift.UnsafeMutablePointer<Swift.Int8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int8",
+                    "printedName": "Swift.Int8",
+                    "usr": "s:s4Int8V"
+                  }
+                ],
+                "usr": "s:Sp"
+              }
+            ],
+            "usr": "s:Sq"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "UnsafePointer",
+            "printedName": "Swift.UnsafePointer<Swift.Int8>",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int8",
+                "printedName": "Swift.Int8",
+                "usr": "s:s4Int8V"
+              }
+            ],
+            "usr": "s:SP"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "c:(cm)parseDL:",
+        "mangledName": "$s20IDScanIDParserNative7parseDLySpys4Int8VGSgSPyADGF",
+        "moduleName": "IDScanIDParserNative",
+        "declAttributes": [
+          "AccessControl",
+          "CDecl"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "freeResult",
+        "printedName": "freeResult(_:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Void",
+            "printedName": "()"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "Optional",
+            "printedName": "Swift.UnsafeMutablePointer<Swift.Int8>?",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UnsafeMutablePointer",
+                "printedName": "Swift.UnsafeMutablePointer<Swift.Int8>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int8",
+                    "printedName": "Swift.Int8",
+                    "usr": "s:s4Int8V"
+                  }
+                ],
+                "usr": "s:Sp"
+              }
+            ],
+            "usr": "s:Sq"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "c:(cm)freeResult:",
+        "mangledName": "$s20IDScanIDParserNative10freeResultyySpys4Int8VGSgF",
+        "moduleName": "IDScanIDParserNative",
+        "declAttributes": [
+          "AccessControl",
+          "CDecl"
+        ],
+        "funcSelfKind": "NonMutating"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SimulatorFramework\/parser\/IDScanIDParserNative\/IDScanIDParserNative.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5276,
+      "length": 5,
+      "value": "false"
+    }
+  ]
+}

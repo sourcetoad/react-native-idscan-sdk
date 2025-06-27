@@ -1,0 +1,86 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios18.5-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name IDScanIDParserNative
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct DriverLicense : Swift.Codable {
+  public let twoDigitYearMaxForExpirationDate: Swift.Int?
+  public let hasDetails: Swift.Bool?
+  public let address1: Swift.String?
+  public let address2: Swift.String?
+  public let birthdate: Swift.String?
+  public let cardRevisionDate: Swift.String?
+  public let city: Swift.String?
+  public let classificationCode: Swift.String?
+  public let complianceType: Swift.String?
+  public let country: Swift.String?
+  public let countryCode: Swift.String?
+  public let documentType: Swift.String?
+  public let documentDiscriminator: Swift.String?
+  public let inventoryControlNumber: Swift.String?
+  public let endorsementsCode: Swift.String?
+  public let endorsementCodeDescription: Swift.String?
+  public let expirationDate: Swift.String?
+  public let eyeColor: Swift.String?
+  public let firstName: Swift.String?
+  public let fullName: Swift.String?
+  public let gender: Swift.String?
+  public let hairColor: Swift.String?
+  public let hazmatExpDate: Swift.String?
+  public let height: Swift.String?
+  public let iin: Swift.String?
+  public let issuedBy: Swift.String?
+  public let issueDate: Swift.String?
+  public let jurisdictionCode: Swift.String?
+  public let lastName: Swift.String?
+  public let licenseNumber: Swift.String?
+  public let discretionaryIdNumber: Swift.String?
+  public let limitedDurationDocument: Swift.String?
+  public let middleName: Swift.String?
+  public let namePrefix: Swift.String?
+  public let nameSuffix: Swift.String?
+  public let organDonor: Swift.String?
+  public let postalBox: Swift.String?
+  public let postalCode: Swift.String?
+  public let race: Swift.String?
+  public let reference: Swift.String?
+  public let realId: Swift.String?
+  public let restrictionCode: Swift.String?
+  public let restrictionCodeDescription: Swift.String?
+  public let specification: Swift.String?
+  public let vehicleClassCode: Swift.String?
+  public let vehicleClassCodeDescription: Swift.String?
+  public let veteran: Swift.String?
+  public let weightKG: Swift.String?
+  public let weightLBS: Swift.String?
+  public let mmiC_LicenseType: Swift.String?
+  public let mmiC_PractitionerNumber: Swift.String?
+  public let validationConfidence: Swift.String?
+  public let validationCodes: Swift.String?
+  public let verificationErrors: Swift.String?
+  public let caC_CardType: Swift.String?
+  public let caC_PersonDesignatorType: Swift.String?
+  public let caC_EDIPI: Swift.String?
+  public let caC_PersonnelCategoryCode: Swift.String?
+  public let caC_BranchCode: Swift.String?
+  public let caC_PersonnelEntitlementConditionType: Swift.String?
+  public let caC_Rank: Swift.String?
+  public let caC_PayPlanCode: Swift.String?
+  public let caC_PayPlanGradeCode: Swift.String?
+  public let caC_CardInstanceIdentifier: Swift.String?
+  public let passportSeries: Swift.String?
+  public let personalNumber: Swift.String?
+  public let driveOnly: Swift.String?
+  public static func createDemoData() -> IDScanIDParserNative.DriverLicense
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_cdecl("setLicense")
+public func setLicense(_ licenseKey: Swift.UnsafePointer<Swift.CChar>) -> Swift.Bool
+@_cdecl("parseDL")
+public func parseDL(_ trackString: Swift.UnsafePointer<Swift.CChar>) -> Swift.UnsafeMutablePointer<Swift.CChar>?
+@_cdecl("freeResult")
+public func freeResult(_ result: Swift.UnsafeMutablePointer<Swift.CChar>?)

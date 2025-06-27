@@ -1,0 +1,4 @@
+framework module IDScanIDParserNative {
+  header "IDScanIDParserNative-Swift.h"
+  requires objc
+}

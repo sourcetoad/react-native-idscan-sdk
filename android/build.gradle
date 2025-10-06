@@ -59,9 +59,9 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 
     // IDScan dependencies
-    implementation 'net.idscan.components.android:dlparser-standard:1.29.0'
-    implementation 'net.idscan.components.android:multiscan:2.3.1'
-    implementation 'net.idscan.components.android:multiscan-mrz:2.3.1'
-    implementation 'net.idscan.components.android:multiscan-pdf417:2.3.1'
+    implementation 'net.idscan.components.android:dlparser-standard:1.30.0'
+    implementation 'net.idscan.components.android:multiscan:2.5.0'
+    implementation 'net.idscan.components.android:multiscan-mrz:2.5.0'
+    implementation 'net.idscan.components.android:multiscan-pdf417:2.5.0'
     implementation "org.jetbrains.kotlin:kotlin-reflect"
 }

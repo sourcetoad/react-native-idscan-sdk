@@ -167,7 +167,7 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
 
   private fun showDefaultScanView() {
     if (checkCameraPermissions()) {
-      val multiScanActivity = MultiScanActivity.build(currentActivity!!)
+      val multiScanActivity = MultiScanActivity.build(reactApplicationContext.currentActivity!!)
 
       if (!(scannerMRZKey!!).isNullOrEmpty()){
         multiScanActivity.withComponent(
@@ -193,13 +193,13 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
 
   private fun checkCameraPermissions(): Boolean {
     val status =
-      ContextCompat.checkSelfPermission(currentActivity!!, Manifest.permission.CAMERA)
+      ContextCompat.checkSelfPermission(reactApplicationContext.currentActivity!!, Manifest.permission.CAMERA)
     return status == PackageManager.PERMISSION_GRANTED
   }
 
   private fun requestCameraPermissions(requestCode: Int) {
     ActivityCompat.requestPermissions(
-      currentActivity!!, arrayOf(Manifest.permission.CAMERA),
+      reactApplicationContext.currentActivity!!, arrayOf(Manifest.permission.CAMERA),
       requestCode
     )
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import { scan, IDSCANNER_CONSTANTS } from 'react-native-idscan-sdk';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {scan, IDSCANNER_CONSTANTS} from 'react-native-idscan-sdk';
 
 export default function App() {
   const [result, setResult] = React.useState<object | undefined>();
@@ -33,18 +33,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        onPress={triggerScanner}
-        style={{
-          width: 200,
-          height: 40,
-          backgroundColor: '#a2f6a5',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginBottom: 10,
-          borderRadius: 5,
-        }}
-      >
+      <TouchableOpacity onPress={triggerScanner} style={styles.button}>
         <Text>Scan ID</Text>
       </TouchableOpacity>
       <Text>Result: {JSON.stringify(result, null, 4)}</Text>
@@ -58,6 +47,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#fff',
+  },
+  button: {
+    width: 200,
+    height: 40,
+    backgroundColor: '#a2f6a5',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+    borderRadius: 5,
   },
   box: {
     width: 60,

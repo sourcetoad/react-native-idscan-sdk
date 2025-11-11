@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.license      = package["license"]
   s.authors      = package["author"]
 
-  s.platforms    = { :ios => "10.0" }
+  s.platforms    = { :ios => "15.0" }
   s.source       = { :git => "https://github.com/sourcetoad/react-native-idscan-sdk.git", :tag => "#{s.version}" }
 
   s.vendored_frameworks = 'ios/sdk/IDScanPDFDetector.xcframework', 'ios/sdk/IDScanMRZDetector.xcframework', 'ios/sdk/IDScanIDParserNative.xcframework'

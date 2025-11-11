@@ -136,8 +136,5 @@
         }
       ]
     ]
-  },
-  "dependencies": {
-    "react-native-idscan-sdk": "^1.2.0"
   }
 }

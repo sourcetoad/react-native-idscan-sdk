@@ -6,7 +6,7 @@ buildscript {
         }
 
         dependencies {
-            classpath 'com.android.tools.build:gradle:7.1.3'
+            classpath 'com.android.tools.build:gradle:8.8.0'
         }
     }
 }
@@ -19,10 +19,10 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('IdscanSdk_compileSdkVersion', 31)
+    compileSdkVersion safeExtGet('IdscanSdk_compileSdkVersion', 36)
     defaultConfig {
-        minSdkVersion safeExtGet('IdscanSdk_minSdkVersion', 19)
-        targetSdkVersion safeExtGet('IdscanSdk_targetSdkVersion', 31)
+        minSdkVersion safeExtGet('IdscanSdk_minSdkVersion', 24)
+        targetSdkVersion safeExtGet('IdscanSdk_targetSdkVersion', 36)
         versionCode 1
         versionName "1.0"
     }
@@ -36,8 +36,8 @@ android {
         disable 'GradleCompatible'
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
 
@@ -54,9 +54,9 @@ repositories {
 
 dependencies {
     //noinspection GradleDynamicVersion
-    implementation "com.facebook.react:react-native:+"  // From node_modules
-    implementation "androidx.core:core-ktx:1.7.0"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "com.facebook.react:react-android"  // From node_modules
+    implementation "androidx.core:core-ktx:1.15.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 
     // IDScan dependencies
     implementation 'net.idscan.components.android:dlparser-standard:1.30.0'

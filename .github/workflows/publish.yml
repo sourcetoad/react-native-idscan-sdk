@@ -4,6 +4,7 @@ on:
     types: [published]
 permissions:
   id-token: write
+  contents: read
 
 jobs:
   publish:
@@ -29,5 +30,3 @@ jobs:
 
       - name: Publish (NPM)
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

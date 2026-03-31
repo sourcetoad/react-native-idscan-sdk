@@ -26,3 +26,10 @@ jobs:
 
       - name: Prepare Build
         run: npm run build
+
+      - name: Confirm Build Artifacts
+        run: |
+          if [ ! -d "lib/commonjs" ]; then echo "lib/commonjs is missing"; exit 1; fi
+          if [ ! -d "lib/module" ]; then echo "lib/module is missing"; exit 1; fi
+          if [ ! -d "lib/typescript" ]; then echo "lib/typescript is missing"; exit 1; fi
+          echo "All build artifacts are present"

@@ -8,6 +8,7 @@
   "react-native": "src/index",
   "source": "src/index",
   "files": [
+    "README.md",
     "src",
     "lib",
     "android",
@@ -68,7 +69,7 @@
     "prettier": "^2.8.8",
     "react": "19.1.1",
     "react-native": "0.82.1",
-    "react-native-builder-bob": "^0.20.0",
+    "react-native-builder-bob": "^0.40.0",
     "react-test-renderer": "19.1.1",
     "typescript": "^5.8.3"
   },

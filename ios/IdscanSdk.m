@@ -42,6 +42,7 @@ RCT_EXPORT_METHOD(scan:(NSString *)type apiKeys: (NSDictionary *)apiKeys callbac
         }
         
         UIViewController *rootViewController = [windowRoot rootViewController];
+        scannerViewController.presentationController.delegate = self;
         [rootViewController presentViewController:scannerViewController animated:YES completion:nil];
     });
 }
@@ -82,6 +83,16 @@ RCT_EXPORT_METHOD(scan:(NSString *)type apiKeys: (NSDictionary *)apiKeys callbac
         [formattedData setObject: @(false) forKey: @"success"];
         [formattedData setObject: [NSNull null] forKey: @"data"];
 
+        self.scannerCallback(@[[NSNull null], formattedData]);
+    }
+}
+
+- (void)presentationControllerDidDismiss:(UIPresentationController *)presentationController {
+    NSLog(@"IDScanner: Scanner dismissed via swipe/tap outside");
+    if (self.scannerCallback) {
+        NSMutableDictionary *formattedData = [NSMutableDictionary dictionary];
+        [formattedData setObject:@(false) forKey:@"success"];
+        [formattedData setObject:[NSNull null] forKey:@"data"];
         self.scannerCallback(@[[NSNull null], formattedData]);
     }
 }

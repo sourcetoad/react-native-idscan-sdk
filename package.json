@@ -61,6 +61,7 @@
     "@types/jest": "^29.5.13",
     "@types/react": "^19.1.1",
     "@types/react-test-renderer": "^19.1.0",
+    "baseline-browser-mapping": "^2.10.13",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -69,7 +70,7 @@
     "prettier": "^2.8.8",
     "react": "19.1.1",
     "react-native": "0.82.1",
-    "react-native-builder-bob": "^0.20.0",
+    "react-native-builder-bob": "^0.40.0",
     "react-test-renderer": "19.1.1",
     "typescript": "^5.8.3"
   },

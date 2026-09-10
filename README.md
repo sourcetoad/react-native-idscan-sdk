@@ -17,20 +17,6 @@ This plugins requires the following usage descriptions added to the application 
 
 ## Android Setup
 
-- Add idscan-public maven repository to the project build.gradle file.
-
-```groovy
-allprojects {
-    repositories {
-        // ...
-        maven {
-            url 'https://www.myget.org/F/idscan-public/maven/'
-        }
-        // ...
-    }
-}
-```
-
 - Insert the following into the project `AndroidManifest.xml` to request camera permission.
 
 ```

@@ -20,12 +20,4 @@ buildscript {
     }
 }
 
-allprojects {
-    repositories {
-        maven {
-            url 'https://www.myget.org/F/idscan-public/maven/'
-        }
-    }
-}
-
 apply plugin: "com.facebook.react.rootproject"

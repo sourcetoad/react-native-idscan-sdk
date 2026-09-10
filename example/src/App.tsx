@@ -23,10 +23,7 @@ export default function App() {
       },
       (error, data) => {
         console.log(error, data);
-
-        if (!error) {
-          setResult(data);
-        }
+        setResult(error ? {error} : data);
       }
     );
   };

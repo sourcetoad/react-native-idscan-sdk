@@ -71,7 +71,6 @@ class IdscanSdkModule(reactContext: ReactApplicationContext) :
             }
             MultiScanActivity.ERROR_RECOGNITION -> errorMessage =
               data?.getStringExtra(MultiScanActivity.ERROR_DESCRIPTION).toString()
-            MultiScanActivity.ERROR_INVALID_CAMERA_NUMBER -> errorMessage = "Invalid camera number."
             MultiScanActivity.ERROR_CAMERA_NOT_AVAILABLE -> errorMessage = "Camera not available."
             MultiScanActivity.ERROR_INVALID_CAMERA_ACCESS -> errorMessage = "Invalid camera access."
             MultiScanActivity.RESULT_CANCELED -> {

@@ -31,5 +31,14 @@ target 'IdscanSdkExample' do
       :mac_catalyst_enabled => false,
             # :ccache_enabled => true
     )
+
+    # fmt 11.0.2 (pinned by RN 0.82) fails to compile with Xcode 26.4's clang under C++20
+    # consteval. Build only the fmt pod as C++17. Remove once on RN >= 0.83.8 (fmt 12.1.0).
+    installer.pods_project.targets.each do |target|
+      next unless target.name == 'fmt'
+      target.build_configurations.each do |build_config|
+        build_config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+      end
+    end
   end
 end
